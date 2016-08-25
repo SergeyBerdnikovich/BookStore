@@ -1,0 +1,9 @@
+package: github.com/gtforge/gett-skeleton-go
+import:
+- package: github.com/bmizerany/pat
+- package: github.com/gtforge/services_common_go
+  subpackages:
+  - gett-config
+  - gett-ops
+- package: github.com/urfave/negroni
+  version: ^0.2.0

@@ -1,0 +1,116 @@
+global:
+  endpoints:
+    area_service:
+      hostname: area-scrumX.gtforge.com
+    ordering_service:
+      hostname: ordering-scrumX.gtforge.com
+    class_availability_service:
+      hostname: class-availability-scrumX.gtforge.com
+    class_identity_service:
+      hostname: class-identity-scrumX.gtforge.com
+    pricing_service:
+      hostname: pricing-scrumX.gtforge.com
+    media_service:
+      hostname: media-scrumX.gtforge.com
+    commission_service:
+      hostname: commission-scrumX.gtforge.com
+    notification_service:
+      hostname: notification-scrumX.gtforge.com
+    coupon_service:
+      hostname: coupon-scrumX.gtforge.com
+    location_service:
+      hostname: location-scrumX.gtforge.com
+    dispatching_service:
+      hostname: dispatching-scrumX.gtforge.com
+    service_hub:
+      hostname: test@hub-scrumX.gtforge.com
+    eta_service:
+      hostname: eta-scrumX.gtforge.com
+    region_identity_service:
+      hostname: region-scrum10.gtforge.com
+    charging_service:
+      hostname: charging-scrumX.gtforge.com
+    oauth_authorization_service:
+      hostname: oauth-scrumX.gtforge.com
+    monitoring_relay_service:
+      hostname: relayscrum.gtforge.com
+  api:
+    read_timeout: 1
+    open_timeout: 0.3
+    open_timeout_retries: 1
+  circuit_breaker:
+    redis:
+    defaults:
+      enabled: true
+      invocation_timeout: 2
+      invocation_timeout_retries: 0
+      recover_timeout: 60
+      failure_threshold: 3
+    api:
+      media:
+        create:
+          invocation_timeout: 1
+      user_text:
+        create:
+          invocation_timeout: 1
+  env:
+      IL: &default_il
+        endpoints:
+          gtforge:
+            hostname: il-scrumX.gtforge.com
+            version: ''
+        currency: ILS
+        map_center_lat: 32.079808
+        map_center_lng: 34.775102
+        map_engine: 'osm'
+        distance_unit: 'metric'
+        time_zone: 'Asia/Tel_Aviv'
+        user_languages:
+          - he
+          - en
+          - ru
+      RU: &default_ru
+        endpoints:
+          gtforge:
+            hostname: ru-scrumX.gtforge.com
+            version: ''
+        currency: RUB
+        map_center_lat: 55.749796
+        map_center_lng: 37.624397
+        distance_unit: 'metric'
+        map_engine: 'google'
+        time_zone: 'Europe/Moscow'
+        user_languages:
+          - ru
+          - en
+          - he
+      UK: &default_uk
+        endpoints:
+          gtforge:
+            hostname: uk-scrumX.gtforge.com
+            version: ''
+        currency: GBP
+        map_center_lat: 51.511221
+        map_center_lng: -0.128236
+        map_engine: 'google'
+        distance_unit: 'metric'
+        time_zone: 'Europe/London'
+        user_languages:
+          - en
+          - he
+          - ru
+      US: &default_us
+        endpoints:
+          gtforge:
+            hostname: us-scrumX.gtforge.com
+            version: ''
+        currency: USD
+        map_center_lat: 40.714500
+        map_center_lng: -74.005500
+        map_engine: 'google'
+        distance_unit: 'imperial'
+        time_zone: 'Eastern Time (US & Canada)'
+        user_languages:
+          - en
+          - he
+          - ru

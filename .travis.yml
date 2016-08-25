@@ -1,0 +1,20 @@
+language: go
+go:
+  - 1.7
+env:
+  - APP_ENV=test
+services:
+  - redis-server
+  - postgresql
+addons:
+  postgresql: "9.4"
+before_install:
+  - echo -e "machine github.com\n  login 54de8434f752617a7b939636a48999a1ceb11f78" >> ~/.netrc
+install:
+  - export PATH=$PATH:$HOME/gopath/bin
+  - curl https://glide.sh/get | sh
+  - glide install
+  - go get golang.org/x/tools/cmd/cover
+script:
+  - go test -v -cover $(go list ./... | grep -v /vendor/)
+

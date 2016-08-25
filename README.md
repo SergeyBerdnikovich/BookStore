@@ -1,1 +1,1 @@
-# gett-skeleton-go
+# {{PROJECTNAME}}
