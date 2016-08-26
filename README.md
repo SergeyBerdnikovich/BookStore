@@ -42,17 +42,19 @@
 ```
 Easily set-up a new golang micro service
 
-Just run the following
+Just run the following in #GOPATH/src
 ```bash
-curl -s -L http://bit.ly/2bMF0uv| bash -s [service_name]
+curl -s -L http://bit.ly/2boMMLW | bash -s YOUR_SERVICE_NAME
 ```
 
 and it will:
   1. Clone the latest version of this repository, using the regular Gett tech stack
   2. Name your service appropriately
   3. Seed basic data
-  4. Make Dockerfile
-  5. Make pizza!
+  4. Redis configuration
+  5. DB configuration
+  6. Make Dockerfile
+  7. Make PIZZA!
 
 Setting up a new service?
 If there is something basic that is missing from this starter template, please add it to the template so everyone could enjoy
