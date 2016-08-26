@@ -1,5 +1,5 @@
 hash: c88f4a12895691d453c500c254cff8415507382aaa426369c062876b70ae98b4
-updated: 2016-08-26T01:51:25.84262426+03:00
+updated: 2016-08-26T21:25:17.547009628+03:00
 imports:
 - name: github.com/bmizerany/pat
   version: c068ca2f0aacee5ac3681d68e4d0a003b7d1fd2c
@@ -22,8 +22,16 @@ imports:
   - json/parser
   - json/scanner
   - json/token
+- name: github.com/jinzhu/gorm
+  version: f26fa242cc1bf884f9a4f98849f70fb8e73f441f
+- name: github.com/jinzhu/inflection
+  version: 74387dc39a75e970e7a3ae6a3386b5bd2e5c5cff
 - name: github.com/kr/fs
   version: 2788f0dbd16903de03cb8186e5c7d97b69ad387b
+- name: github.com/lib/pq
+  version: 80f8150043c80fb52dee6bc863a709cdac7ec8f8
+  subpackages:
+  - oid
 - name: github.com/magiconair/properties
   version: 61b492c03cf472e0c6419be5899b8e0dc28b1b88
 - name: github.com/mitchellh/mapstructure
@@ -79,6 +87,15 @@ imports:
   - unicode/norm
 - name: gopkg.in/airbrake/gobrake.v2
   version: 5d77bd50d083834501349f8be70197b26963674d
+- name: gopkg.in/bsm/ratelimit.v1
+  version: db14e161995a5177acef654cb0dd785e8ee8bc22
+- name: gopkg.in/redis.v3
+  version: b5e368500d0a508ef8f16e9c2d4025a8a46bcc29
+  subpackages:
+  - internal
+  - internal/consistenthash
+  - internal/hashtag
+  - internal/pool
 - name: gopkg.in/yaml.v2
   version: e4d366fc3c7938e2958e662b4258c7a89e1f0e3e
 testImports: []
