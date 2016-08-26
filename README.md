@@ -1,4 +1,4 @@
-# GettSkeleton
+# GettSkeleton golang
 ```
      _.--""--._        
    ."          ".     
@@ -42,7 +42,8 @@
 ```
 Easily set-up a new golang micro service
 
-Just run the following in #GOPATH/src
+Just run the following in 
+####GOPATH/src
 ```bash
 curl -s -L http://bit.ly/2boMMLW | bash -s YOUR_SERVICE_NAME
 ```
