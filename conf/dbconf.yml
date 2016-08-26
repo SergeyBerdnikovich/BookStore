@@ -1,18 +1,18 @@
 development:
   host: localhost
   driver: postgres
-  open: dbname={{PROJECTNAME}}  sslmode=disable
-  user_name: postgres
+  open: dbname={|PROJECTNAME|}  sslmode=disable
+  user_name:
   password:
   log: true
-  database: gateway
+  database: {|PROJECTNAME|}
   pool: 100
 test:
   host: localhost
   driver: postgres
-  open: dbname={{PROJECTNAME}}_test  sslmode=disable
-  user_name: postgres
+  open: dbname={|PROJECTNAME|}_test  sslmode=disable
+  user_name:
   password:
   log: true
-  database: gateway_test
+  database: {|PROJECTNAME|}_test
   pool: 100

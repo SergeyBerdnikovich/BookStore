@@ -1,6 +1,6 @@
 FROM gett/golang_base
 
-ENV APP_NAME {{PROJECTNAME}}
+ENV APP_NAME {|PROJECTNAME|}
 
 RUN mkdir -p /go/src/github.com/gtforge/$APP_NAME
 WORKDIR /go/src/github.com/gtforge/$APP_NAME

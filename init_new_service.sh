@@ -10,14 +10,14 @@ brew install glide
 glide install
 go get bitbucket.org/liamstask/goose/cmd/goose
 echo "Adding Flesh"
- $PROJECTNAME
-sed -i -- 's/{{PROJECTNAME}}/$PROJECTNAME/g' .gitignore
-sed -i -- 's/{{PROJECTNAME}}/$PROJECTNAME/g' Dockerfile
-sed -i -- 's/{{PROJECTNAME}}/$PROJECTNAME/g' README.md
-sed -i -- 's/{{PROJECTNAME}}/$PROJECTNAME/g' conf/dbconf.yml
+sed -e 's/{|PROJECTNAME|}/$PROJECTNAME/g' .gitignore
+sed -e 's/{|PROJECTNAME|}/$PROJECTNAME/g' Dockerfile
+sed -e 's/{|PROJECTNAME|}/$PROJECTNAME/g' README.md
+sed -e 's/{|PROJECTNAME|}/$PROJECTNAME/g' conf/dbconf.yml
 echo "Tablizing..."
 goose -env=development -path=config up
 echo "Gitifying..."
+rm init_new_service.sh
 rm -rf .git
 git init
 git add .
