@@ -25,6 +25,7 @@ echo "Cloning from skeleton..."
 mkdir -p github.com/gtforge/$PROJECTNAME
 cd github.com/gtforge/$PROJECTNAME
 git clone git@github.com:gtforge/gett-skeleton-go.git .
+brew update
 brew install glide
 glide install
 go get bitbucket.org/liamstask/goose/cmd/goose
