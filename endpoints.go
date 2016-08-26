@@ -5,6 +5,8 @@ import (
 	"net/http"
 )
 
+//Add you api handlers here
+
 type Endpoints struct{}
 
 func (c Endpoints) RenderJSON(r http.ResponseWriter, status int, v interface{}) {
@@ -12,10 +14,9 @@ func (c Endpoints) RenderJSON(r http.ResponseWriter, status int, v interface{}) 
 	var err error
 	result, err = json.Marshal(v)
 	if err != nil {
-		http.Error(r, err.Error(), 500)
+		http.Error(r, err.Error(), http.StatusInternalServerError)
 		return
 	}
-	// json rendered fine, write out the result
 	r.Header().Set("Content-Type", "application/json; charset=utf-8")
 	r.WriteHeader(status)
 	r.Write(result)

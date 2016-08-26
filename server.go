@@ -10,7 +10,7 @@ import (
 	"github.com/urfave/negroni"
 )
 
-// newServer - setup http server with negroni()
+// newServer - setup http server with negroni
 func newServer() *http.Server {
 	n := negroni.New()
 	if gettConfig.Settings.Environment.GetBool("log") {
@@ -20,6 +20,8 @@ func newServer() *http.Server {
 	for _, middleware := range gettOps.GetAllMiddlewares() {
 		n.UseFunc(middleware)
 	}
+	// Add you Middlewares here
+
 	// Add the router action
 	n.UseHandler(setupRouter())
 
@@ -36,7 +38,9 @@ func newServer() *http.Server {
 
 func setupRouter() *pat.PatternServeMux {
 	router := pat.New()
-	//TODO ADD Route here
+
+	//TODO ADD you Routes here
+
 	for path, handler := range gettOps.GetAllRouter() {
 		router.Get(path, handler)
 	}

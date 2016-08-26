@@ -44,7 +44,7 @@ Easily set-up a new golang micro service
 
 Just run the following
 ```bash
-curl -s -L http://bit.ly/98uf3Fg| bash -s [service_name]
+curl -s -L http://bit.ly/2bMF0uv| bash -s [service_name]
 ```
 
 and it will:
@@ -58,4 +58,4 @@ Setting up a new service?
 If there is something basic that is missing from this starter template, please add it to the template so everyone could enjoy
 
 To edit the install script:
-https://gist.github.com/itaitay/4ef043a014a3e202da69
+https://gist.github.com/sergeylanzman/4e246edacc5c87aae85534500683cba8
