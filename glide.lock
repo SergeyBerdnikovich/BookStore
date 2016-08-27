@@ -1,12 +1,12 @@
 hash: c88f4a12895691d453c500c254cff8415507382aaa426369c062876b70ae98b4
-updated: 2016-08-26T21:38:05.924258982+03:00
+updated: 2016-08-27T20:21:38.503031583+03:00
 imports:
 - name: github.com/bmizerany/pat
   version: c068ca2f0aacee5ac3681d68e4d0a003b7d1fd2c
 - name: github.com/fsnotify/fsnotify
   version: f12c6236fe7b5cf6bcf30e5935d08cb079d78334
 - name: github.com/gtforge/services_common_go
-  version: 8c9593247376701af4716f8dcffc0a43507a669b
+  version: 20908d51fa9c36665fc559531c5f0c623a9ecf63
   subpackages:
   - gett-alive
   - gett-config
@@ -23,7 +23,7 @@ imports:
   - json/scanner
   - json/token
 - name: github.com/jinzhu/gorm
-  version: f26fa242cc1bf884f9a4f98849f70fb8e73f441f
+  version: 5174cc5c242a728b435ea2be8a2f7f998e15429b
 - name: github.com/jinzhu/inflection
   version: 74387dc39a75e970e7a3ae6a3386b5bd2e5c5cff
 - name: github.com/kr/fs
@@ -89,13 +89,15 @@ imports:
   version: 5d77bd50d083834501349f8be70197b26963674d
 - name: gopkg.in/bsm/ratelimit.v1
   version: db14e161995a5177acef654cb0dd785e8ee8bc22
-- name: gopkg.in/redis.v3
-  version: b5e368500d0a508ef8f16e9c2d4025a8a46bcc29
+- name: gopkg.in/redis.v4
+  version: 49f197e6d11de35192fce19b2b9fd2f9b8b13c4a
   subpackages:
   - internal
   - internal/consistenthash
+  - internal/errors
   - internal/hashtag
   - internal/pool
+  - internal/proto
 - name: gopkg.in/yaml.v2
   version: e4d366fc3c7938e2958e662b4258c7a89e1f0e3e
 testImports: []
