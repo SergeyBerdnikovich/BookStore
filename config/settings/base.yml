@@ -24,9 +24,9 @@ global:
       hostname: dispatching-scrumX.gtforge.com
     service_hub:
       hostname: test@hub-scrumX.gtforge.com
-    eta_service:
+    preeta_service:
       hostname: eta-scrumX.gtforge.com
-    region_identity_service:
+    regionidentity_service:
       hostname: region-scrum10.gtforge.com
     charging_service:
       hostname: charging-scrumX.gtforge.com
