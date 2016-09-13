@@ -6,7 +6,7 @@ imports:
 - name: github.com/fsnotify/fsnotify
   version: f12c6236fe7b5cf6bcf30e5935d08cb079d78334
 - name: github.com/gtforge/services_common_go
-  version: 6a3e42aa4097261edbf64f669bbac5bddcd0bfbf
+  version: 47fab54b057bcd2c1b9ba9585a8c3d1b37a5589e
   subpackages:
   - gett-alive
   - gett-config
