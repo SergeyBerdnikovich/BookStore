@@ -34,6 +34,8 @@ global:
       hostname: oauth-scrumX.gtforge.com
     monitoring_relay_service:
       hostname: relayscrum.gtforge.com
+    osrm_service:
+      hostname: osrm-qa.gtforge.com
   api:
     read_timeout: 1
     open_timeout: 0.3
