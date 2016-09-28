@@ -32,8 +32,9 @@ go get bitbucket.org/liamstask/goose/cmd/goose
 echo "Adding Flesh"
 sed -i '' 's/{|PROJECTNAME|}/'$PROJECTNAME'/g' .gitignore
 sed -i '' 's/{|PROJECTNAME|}/'$PROJECTNAME'/g' Dockerfile
-sed -i '' 's/{|PROJECTNAME|}/'$PROJECTNAME'/g' conf/dbconf.yml
-echo '# '$PROJECTNAME >> README.md
+sed -i '' 's/{|PROJECTNAME|}/'$PROJECTNAME'/g' config/dbconf.yml
+sed -i '' 's/{|PROJECTNAME|}/'$PROJECTNAME'/g' glide.yaml
+echo '# '$PROJECTNAME > README.md
 echo "Tablizing..."
 goose -env=development -path=config up
 echo "Gitifying..."
