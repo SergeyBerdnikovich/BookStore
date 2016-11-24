@@ -6,7 +6,8 @@ development:
   password:
   log: true
   database: {|PROJECTNAME|}
-  pool: 100
+  open_pool: 20
+  idle_pool: 10
 test:
   host: localhost
   driver: postgres
@@ -15,4 +16,5 @@ test:
   password:
   log: true
   database: {|PROJECTNAME|}_test
-  pool: 100
+  open_pool: 20
+  idle_pool: 10
