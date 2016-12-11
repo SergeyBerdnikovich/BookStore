@@ -1,8 +1,9 @@
 language: go
 go:
-  - 1.7
+  - 1.7.4
 env:
   - APP_ENV=test
+  - APP_CONF_PATH=../conf
 services:
   - redis-server
   - postgresql

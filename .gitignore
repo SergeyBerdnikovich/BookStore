@@ -1,3 +1,15 @@
 .idea
 vendor
 {|PROJECTNAME|}
+.tags*
+lastupdate.tmp
+swagger/css
+swagger/fonts
+swagger/images
+swagger/lang
+swagger/lib
+swagger/*.html
+swagger/*.js
+.DS_Store
+dump.rdb
+tests/log

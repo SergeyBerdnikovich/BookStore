@@ -1,9 +1,10 @@
 package: github.com/gtforge/{|PROJECTNAME|}
 import:
-- package: github.com/bmizerany/pat
+- package: github.com/astaxie/beego
 - package: github.com/gtforge/services_common_go
   subpackages:
-  - gett-config
-  - gett-ops
-- package: github.com/urfave/negroni
-  version: ^0.2.0
+  - gett-ops/gett-beego
+testImport:
+- package: github.com/smartystreets/goconvey
+  subpackages:
+  - convey
