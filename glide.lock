@@ -9,13 +9,14 @@ imports:
   - grace
   - logs
   - plugins/cors
+  - plugins/auth
   - session
   - toolbox
   - utils
 - name: github.com/fsnotify/fsnotify
   version: fd9ec7deca8bf46ecd2a795baaacf2b3a9be1197
 - name: github.com/gtforge/services_common_go
-  version: 8cf277809861bd10c311ee38193e65266d5bfdfe
+  version: 7aa24bf62bf4e0c41d62aa8e9b680c97511bcdb7
   subpackages:
   - gett-alive
   - gett-config
