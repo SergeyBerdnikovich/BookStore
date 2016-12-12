@@ -26,7 +26,7 @@ Project plan
 5. routes => routes + filter + other webserver and beego settings
 6. tests => api tests for service.
 
-For run in dev env use https://github.com/beego/bee v1.5.2
+For run in dev env use https://github.com/beego/bee
 ```
 bee run -gendoc=true
 ```
