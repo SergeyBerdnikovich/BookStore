@@ -28,7 +28,7 @@ Project plan
 
 For run in dev env use https://github.com/beego/bee v1.5.2
 ```
-bee run -downdoc=true -gendoc=true
+bee run -gendoc=true
 ```
 glide for dependency manager
 Troubleshooting with glide:
