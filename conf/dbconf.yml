@@ -18,3 +18,9 @@ test:
   database: {|PROJECTNAME|}_test
   open_pool: 20
   idle_pool: 10
+stage:
+    driver: postgres
+    open: dbname=$CONFIG_DBCONF_STAGE_DATABASE sslmode=disable host=$CONFIG_DBCONF_STAGE_HOST user=$CONFIG_DBCONF_STAGE_USER_NAME password=$CONFIG_DBCONF_STAGE_PASSWORD
+prod:
+    driver: postgres
+    open: dbname=$CONFIG_DBCONF_PROD_DATABASE sslmode=disable host=$CONFIG_DBCONF_PROD_HOST user=$CONFIG_DBCONF_PROD_USER_NAME password=$CONFIG_DBCONF_PROD_PASSWORD
