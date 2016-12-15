@@ -2,24 +2,27 @@ language: go
 go:
   - 1.7.4
 env:
-  - APP_ENV=test
-  - APP_CONF_PATH=../conf
+  global:
+    - APP_ENV=test
+    - APP_CONF_PATH=../conf
 services:
   - redis-server
   - postgresql
 addons:
   postgresql: "9.5"
 before_install:
-  - echo -e "machine github.com\n  login 54de8434f752617a7b939636a48999a1ceb11f78" >> ~/.netrc
-install:
   - export PATH=$PATH:$HOME/gopath/bin
-#  - psql -c 'ALTER USER postgres WITH SUPERUSER'
-#  - psql -c 'create database DB_NAME;' -U postgres
+  - echo -e "machine github.com\n  login 54de8434f752617a7b939636a48999a1ceb11f78" >> ~/.netrc
+  - psql -c 'ALTER USER postgres WITH SUPERUSER'
+  - psql -U postgres -c 'CREATE DATABASE DB_NAME;'
+  - psql -U postgres -c "CREATE EXTENSION postgis;" DB_NAME
   - go get bitbucket.org/liamstask/goose/cmd/goose
   - goose -path=conf -env=test up
-  - curl https://glide.sh/get | sh
+install:
+  - sudo add-apt-repository ppa:masterminds/glide -y && sudo apt-get update
+  - sudo apt-get install glide
   - glide install
   - go get golang.org/x/tools/cmd/cover
+  - go get github.com/mattn/goveralls
 script:
   - go test -v -cover $(go list ./... | grep -v /vendor/)
-
