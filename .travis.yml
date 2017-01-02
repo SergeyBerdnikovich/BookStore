@@ -19,8 +19,7 @@ before_install:
   - go get bitbucket.org/liamstask/goose/cmd/goose
   - goose -path=conf -env=test up
 install:
-  - sudo add-apt-repository ppa:masterminds/glide -y && sudo apt-get update
-  - sudo apt-get install glide
+  - go get github.com/Masterminds/glide
   - glide install
   - go get golang.org/x/tools/cmd/cover
   - go get github.com/mattn/goveralls
