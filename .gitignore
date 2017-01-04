@@ -13,3 +13,4 @@ swagger/*.js
 .DS_Store
 dump.rdb
 tests/log
+log/*
