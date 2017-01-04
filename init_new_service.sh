@@ -31,15 +31,7 @@ glide install
 go get bitbucket.org/liamstask/goose/cmd/goose
 go get github.com/beego/bee
 echo "Adding Flesh"
-sed -i '' 's/{|PROJECTNAME|}/'$PROJECTNAME'/g' .gitignore
-sed -i '' 's/{|PROJECTNAME|}/'$PROJECTNAME'/g' Dockerfile
-sed -i '' 's/{|PROJECTNAME|}/'$PROJECTNAME'/g' conf/dbconf.yml
-sed -i '' 's/{|PROJECTNAME|}/'$PROJECTNAME'/g' glide.yaml
-sed -i '' 's/{|PROJECTNAME|}/'$PROJECTNAME'/g' conf/app.conf
-sed -i '' 's/{|PROJECTNAME|}/'$PROJECTNAME'/g' routers/router.go
-sed -i '' 's/{|PROJECTNAME|}/'$PROJECTNAME'/g' tests/example_test.go
-sed -i '' 's/{|PROJECTNAME|}/'$PROJECTNAME'/g' main.go
-
+sed -i '' 's/{|PROJECTNAME|}/'$PROJECTNAME'/g' $(find -L . -type f| grep -v .git)
 echo '# '$PROJECTNAME > README.md
 echo "Gitifying..."
 rm init_new_service.sh
