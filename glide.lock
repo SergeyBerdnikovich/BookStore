@@ -20,7 +20,7 @@ imports:
 - name: github.com/gtforge/beego-assets
   version: 9f55f1a04f2f2a5a691366c366a89921569df98d
 - name: github.com/gtforge/services_common_go
-  version: 7f835fb53de547fba3a0fbebf04aaef66b237937
+  version: 52aa12e7162ac8618e873527eaf4861cb5d93e4c
   subpackages:
   - gett-alive
   - gett-auth
