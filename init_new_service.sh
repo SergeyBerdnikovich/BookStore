@@ -31,7 +31,7 @@ glide install
 go get bitbucket.org/liamstask/goose/cmd/goose
 go get github.com/beego/bee
 echo "Adding Flesh"
-LC_CTYPE=C sed -i '' 's/{|PROJECTNAME|}/'$PROJECTNAME'/g' $(find -L . -type f| grep -v .git)
+LC_CTYPE=C sed -i '' 's/{|PROJECTNAME|}/'$PROJECTNAME'/g' $(find -L . -type f| grep -v .git | grep -v assets)
 echo '# '$PROJECTNAME > README.md
 echo "Gitifying..."
 rm init_new_service.sh

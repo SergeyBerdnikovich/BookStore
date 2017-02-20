@@ -1,5 +1,5 @@
 .idea
-vendor
+/vendor
 {|PROJECTNAME|}
 .tags*
 lastupdate.tmp
@@ -14,3 +14,5 @@ swagger/*.js
 dump.rdb
 tests/log
 log/*
+public/assets
+.sass-cache

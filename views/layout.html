@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>Gett | {{.app_name}}</title>
+    {{ asset_css "ui" }}
+    {{ asset_js "ui" }}
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.ico"/>
+</head>
+<body>
+{{ template "partials/navbar.html" . }}
+<div class="container-fluid col-sm-12 col-lg-12 col-md-12">
+    {{ .LayoutContent }}
+</div>
+</body>

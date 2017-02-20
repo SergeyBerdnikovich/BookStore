@@ -1,0 +1,75 @@
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div class="logo">
+                <a href="/">
+                    <img src="/assets/images/logo.png" alt="Logo"/>
+                </a>
+            </div>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                {{range $tab_name, $tab_url := .menu}}
+                <li class="separator"></li>
+                <li><a href="{{$tab_url}}">{{$tab_name}}</a></li>
+                {{end}}
+                <li class="separator"></li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{.app_name}}<span class="caret"></span></a>
+                    <ul class="dropdown-menu scrollable-menu">
+                        {{ range $service_name, $service_url:= .gett_services_url}}
+                        <li><a href="{{$service_url}}">{{$service_name}}</a></li>
+                        {{end}}
+                    </ul>
+                </li>
+            </ul>
+
+            <p class="navbar-text roles-alert">{{.user_role}}</p>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown locale-selector">
+                    <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-toggle="dropdown"
+                       href="#" role="button">English<span class="caret"></span></a>
+                    <ul class="dropdown-menu scrollable-menu" role="menu">
+                        <li><a href="/?locale=ru">Русский</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown env-selector">
+                    <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-toggle="dropdown"
+                       href="#" role="button">
+                        <img height="20" alt="{{.current_env.Code|ToUpper}}" src="/assets/images/country-4x3/{{.current_env.Code|ToLower}}.svg"/>
+                        <span>{{.current_env.Code|ToUpper}}</span>
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu scrollable-menu" role="menu">
+                        {{range $i, $env := .envs}}
+                        {{if not (compare $env $.current_env) }}
+                        <li>
+                                <a href="{{map_get $.gett_services_url $.app_name}}/?env={{$env.Code|ToUpper}}">
+                                    <img height="20" width="15"
+                                         src="/assets/images/country-4x3/{{$env.Code|ToLower}}.svg"/>
+                                    {{$env.Code|ToUpper}}</a>
+                        </li>
+                        {{end}}
+                        {{end}}
+                    </ul>
+                </li>
+
+                <li class="separator"></li>
+                <li><a href="/users/sign_out"><i class="fa fa-sign-out"></i></a></li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
