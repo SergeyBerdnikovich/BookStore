@@ -14,14 +14,13 @@ before_install:
   - export PATH=$PATH:$HOME/gopath/bin
   - echo -e "machine github.com\n  login 54de8434f752617a7b939636a48999a1ceb11f78" >> ~/.netrc
   - psql -c 'ALTER USER postgres WITH SUPERUSER'
-  - psql -U postgres -c 'CREATE DATABASE DB_NAME;'
-  - psql -U postgres -c "CREATE EXTENSION postgis;" DB_NAME
+  - psql -U postgres -c 'CREATE DATABASE {|PROJECTNAME|}_test;'
+  - psql -U postgres -c "CREATE EXTENSION postgis;" {|PROJECTNAME|}_test
   - go get bitbucket.org/liamstask/goose/cmd/goose
   - goose -path=conf -env=test up
 install:
   - go get github.com/Masterminds/glide
   - glide install
-  - go get golang.org/x/tools/cmd/cover
-  - go get github.com/mattn/goveralls
 script:
   - go test -v -cover $(go list ./... | grep -v /vendor/)
+  - curl -s -L https://git.io/vDAP3 | bash
