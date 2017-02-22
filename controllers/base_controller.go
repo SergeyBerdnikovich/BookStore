@@ -5,15 +5,18 @@ import (
 
 	"github.com/astaxie/beego/context"
 
+	"github.com/Sirupsen/logrus"
 	"github.com/astaxie/beego"
 	"github.com/gtforge/services_common_go/gett-auth"
 	"github.com/gtforge/services_common_go/gett-env"
 )
 
+// Base - Base controller for all UI controller
 type Base struct {
 	gettAuth.AuthController
 }
 
+// Init - initialization for base controller with basic parameters
 func (c *Base) Init(ct *context.Context, controllerName, actionName string, app interface{}) {
 	// this part activates the authentication
 	c.AuthController.Init(ct, controllerName, actionName, app)
@@ -34,7 +37,10 @@ func (c *Base) Init(ct *context.Context, controllerName, actionName string, app 
 		c.Data["current_env"] = gettEnv.Envs["il"]
 	}
 }
-
+// Index - Main page
 func (c *Base) Index() {
-	c.Render()
+	err := c.Render()
+	if err != nil {
+		logrus.Error(err)
+	}
 }

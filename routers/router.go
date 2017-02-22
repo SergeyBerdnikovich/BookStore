@@ -1,3 +1,4 @@
+// Package routers for service
 // @APIVersion 1.0.0
 // @Title Gett {|PROJECTNAME|}
 // @Description Gett {|PROJECTNAME|}
@@ -8,6 +9,7 @@ package routers
 import (
 	"github.com/astaxie/beego"
 	"github.com/gtforge/{|PROJECTNAME|}/controllers"
+	// import gett-beego package with share settings and endpoints
 	_ "github.com/gtforge/services_common_go/gett-ops/gett-beego"
 )
 
@@ -17,7 +19,7 @@ func init() {
 	//apiV1 := beego.NewNamespace("/api",
 	//	beego.NSNamespace("/v1",
 	//		beego.NSInclude(
-	//			&controllers.DriverControllerV2{},
+	//			&apiv1.BaseAPIController{},
 	//		),
 	//	),
 	//	)

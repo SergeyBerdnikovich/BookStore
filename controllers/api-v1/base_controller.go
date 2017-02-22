@@ -1,7 +1,8 @@
-package api_v1
+package apiv1
 
 import "github.com/astaxie/beego"
 
-type BaseController struct {
+// BaseAPIController - for all APIs Controller
+type BaseAPIController struct {
 	beego.Controller
 }
