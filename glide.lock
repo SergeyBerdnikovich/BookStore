@@ -18,9 +18,9 @@ imports:
 - name: github.com/fsnotify/fsnotify
   version: a904159b9206978bb6d53fcc7a769e5cd726c737
 - name: github.com/gtforge/beego-assets
-  version: 9f55f1a04f2f2a5a691366c366a89921569df98d
+  version: e85b874c4b0bc63afd7be60796a638347a52dba2
 - name: github.com/gtforge/services_common_go
-  version: 52aa12e7162ac8618e873527eaf4861cb5d93e4c
+  version: 1c23a2b16b40fbd2d1d5ae479608551ed0f1a069
   subpackages:
   - gett-alive
   - gett-auth
