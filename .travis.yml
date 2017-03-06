@@ -1,4 +1,7 @@
 language: go
+branches:
+  except:
+  - /^scrum\d+$/
 go:
   - 1.8
 env:
