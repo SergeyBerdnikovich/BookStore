@@ -52,3 +52,28 @@ If there is something basic that is missing from this starter template, please a
 To edit the install script:
 https://gist.github.com/sergeylanzman/4e246edacc5c87aae85534500683cba8
 
+# Target readme file (Template):
+----------
+
+# \< Service name here >
+
+## Service's Responsibility
+\< think SRP: one thing the service does, and only it does it accross the whole system >
+
+## Business Justification
+\< there must be some to justify a new service. describe it >
+
+## [Business Criticality](https://confluence.gtforge.com/display/AR/Business+Criticality)
+\< TBD with an Architect >
+
+## Owner
+Supply: \< at least two developer names here >
+
+## Structure
+\< key insight about how the service is built; main design decisions >
+
+## Key Endpoints
+\< desribe 2-3 key endpoint of the service, its purpose and how data looks like. this should give tangible insight about how the service contract >
+
+## Installation
+\< what needed to be done to install it >
