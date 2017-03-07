@@ -67,7 +67,7 @@ https://gist.github.com/sergeylanzman/4e246edacc5c87aae85534500683cba8
 \< TBD with an Architect >
 
 ## Owner
-Supply: \< at least two developer names here >
+\< R&D group name >: \< at least two developer names here >
 
 ## Structure
 \< key insight about how the service is built; main design decisions >
