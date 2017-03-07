@@ -52,7 +52,7 @@ If there is something basic that is missing from this starter template, please a
 To edit the install script:
 https://gist.github.com/sergeylanzman/4e246edacc5c87aae85534500683cba8
 
-# Target readme file (Template):
+# Target readme file (Template): ([Example Reference](https://github.com/gtforge/arm_service/blob/dev/README.md))
 ----------
 
 # \< Service name here >
