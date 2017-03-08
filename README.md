@@ -77,3 +77,8 @@ https://gist.github.com/sergeylanzman/4e246edacc5c87aae85534500683cba8
 
 ## Installation
 \< what needed to be done to install it >
+
+## Settings
+* \< setting name > - \< meaning >
+* \< setting name > - \< meaning >
+* \< setting name > - \< meaning >
