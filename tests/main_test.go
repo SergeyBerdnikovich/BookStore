@@ -13,6 +13,8 @@ import (
 
 // TestMain - Main test function, tests start here
 func TestMain(m *testing.M) {
+	initBeego()
+
 	errCode := m.Run()
 	err := os.Remove("tests/lastupdate.tmp")
 	if err != nil {
@@ -31,6 +33,7 @@ func TestMain(m *testing.M) {
 	if err != nil {
 		logrus.Error(err)
 	}
+
 	os.Exit(errCode)
 }
 

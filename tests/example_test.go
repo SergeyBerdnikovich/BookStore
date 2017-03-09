@@ -9,12 +9,8 @@ import (
 	. "github.com/onsi/gomega"
 )
 
-func init() {
-	initBeego()
-}
-
 // A sample endpoint test
-// Use `Expect` instead of `Ω` (⌥+Z) if you don't like Greek alphabet.
+// Use `Ω` (⌥+Z) instead of `Expect` if you like Greek alphabet.
 
 var _ = Describe("/alive", func() {
 
@@ -25,10 +21,10 @@ var _ = Describe("/alive", func() {
 	})
 
 	It("should respond with 200 OK", func() {
-		Ω(response.Code).To(Equal(200))
+		Expect(response.Code).To(Equal(200))
 	})
 
 	It("should respond with non-empty body", func() {
-		Ω(response.Body.Len()).NotTo(BeZero())
+		Expect(response.Body.Len()).NotTo(BeZero())
 	})
 })
