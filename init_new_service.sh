@@ -29,6 +29,7 @@ brew update
 brew install glide
 go get bitbucket.org/liamstask/goose/cmd/goose
 go get github.com/beego/bee
+go get github.com/onsi/ginkgo/ginkgo
 echo "Adding Flesh"
 LC_CTYPE=C sed -i '' 's/{|PROJECTNAME|}/'$PROJECTNAME'/g' $(find -L . -type f| grep -v .git | grep -v assets)
 echo '# '$PROJECTNAME > README.md

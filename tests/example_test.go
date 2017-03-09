@@ -1,36 +1,30 @@
 package tests
 
 import (
-	"path/filepath"
-	"runtime"
-	"testing"
-
-	"net/http"
 	"net/http/httptest"
 
-	"github.com/astaxie/beego"
 	_ "github.com/gtforge/{|PROJECTNAME|}/routers"
-	. "github.com/smartystreets/goconvey/convey"
+
+	. "github.com/onsi/ginkgo"
+	. "github.com/onsi/gomega"
 )
 
-func init() {
-	_, file, _, _ := runtime.Caller(1)
-	apppath, _ := filepath.Abs(filepath.Dir(filepath.Join(file, ".."+string(filepath.Separator))))
-	beego.TestBeegoInit(apppath)
-}
+// A sample endpoint test
+// Use `Ω` (⌥+Z) instead of `Expect` if you like Greek alphabet.
 
-// TestGet is a sample to run an endpoint test
-func TestGet(t *testing.T) {
-	r, _ := http.NewRequest("GET", "/alive", nil)
-	w := httptest.NewRecorder()
-	beego.BeeApp.Handlers.ServeHTTP(w, r)
-	beego.Trace("testing", "TestGet", "Code[%d]\n%s", w.Code, w.Body.String())
-	Convey("Subject: Test Station Endpoint\n", t, func() {
-		Convey("Status Code Should Be 200", func() {
-			So(w.Code, ShouldEqual, 200)
-		})
-		Convey("The Result Should Not Be Empty", func() {
-			So(w.Body.Len(), ShouldBeGreaterThan, 0)
-		})
+var _ = Describe("/alive", func() {
+
+	var response *httptest.ResponseRecorder
+
+	BeforeEach(func() {
+		response = MakeTestRequest("GET", "/alive", nil)
 	})
-}
+
+	It("should respond with 200 OK", func() {
+		Expect(response.Code).To(Equal(200))
+	})
+
+	It("should respond with non-empty body", func() {
+		Expect(response.Body.Len()).NotTo(BeZero())
+	})
+})
