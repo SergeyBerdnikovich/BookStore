@@ -26,4 +26,4 @@ install:
   - glide install
 script:
   - go test -v -cover $(go list ./... | grep -v /vendor/)
-  - curl -s -L https://git.io/vDAP3 | bash
+  - curl -s https://54de8434f752617a7b939636a48999a1ceb11f78@raw.githubusercontent.com/gtforge/gett_tools_scripts/master/code_analysis/golang/travis-check/static_analysis_tools.sh | bash
