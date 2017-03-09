@@ -7,6 +7,8 @@ import (
 	"testing"
 
 	"github.com/Sirupsen/logrus"
+	"github.com/onsi/ginkgo"
+	"github.com/onsi/gomega"
 )
 
 // TestMain - Main test function, tests start here
@@ -30,4 +32,10 @@ func TestMain(m *testing.M) {
 		logrus.Error(err)
 	}
 	os.Exit(errCode)
+}
+
+// Ginkgo suite for a `tests` package
+func TestAPI(t *testing.T) {
+	gomega.RegisterFailHandler(ginkgo.Fail)
+	ginkgo.RunSpecs(t, "API Suite")
 }
