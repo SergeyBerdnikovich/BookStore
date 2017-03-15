@@ -32,9 +32,9 @@ func (c *Base) Init(ct *context.Context, controllerName, actionName string, app 
 
 	// this part is about the env dropdown
 	if env := c.GetString("env"); env != "" {
-		c.Data["current_env"] = gettEnv.Envs[strings.ToLower(env)]
+		c.Data["current_env"] = gettEnv.Envs[strings.ToUpper(env)]
 	} else {
-		c.Data["current_env"] = gettEnv.Envs["il"]
+		c.Data["current_env"] = gettEnv.Envs["IL"]
 	}
 }
 // Index - Main page
