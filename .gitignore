@@ -16,3 +16,4 @@ tests/log
 log/*
 public/assets
 .sass-cache
+tmp
