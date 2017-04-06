@@ -5,3 +5,4 @@ scripts:
     lints: curl -s https://54de8434f752617a7b939636a48999a1ceb11f78@raw.githubusercontent.com/gtforge/gett_tools_scripts/master/code_analysis/golang/travis-check/static_analysis_tools.sh | bash
     glide-reset: rm glide.* && glide init && glide cc && glide install
     gtest: APP_ENV=test APP_CONF_PATH=$(pwd)/conf go test -v -cover  $(go list ./... | grep -v /vendor/)
+    migration: goose -env=development -path=conf up
