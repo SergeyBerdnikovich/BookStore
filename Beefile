@@ -2,7 +2,7 @@ enable_reload: true
 enable_notification: true
 scripts:
     users-preload: go run vendor/github.com/gtforge/services_common_go/gett-auth/seed/seed_users.go
-    lints: curl -s https://54de8434f752617a7b939636a48999a1ceb11f78@raw.githubusercontent.com/gtforge/gett_tools_scripts/master/code_analysis/golang/travis-check/static_analysis_tools.sh | bash
+    lints: curl -s https://b08b064f7d82cfb3996562e74e125160e076f6be@raw.githubusercontent.com/gtforge/gett_tools_scripts/master/code_analysis/golang/travis-check/static_analysis_tools.sh | bash
     glide-reset: rm glide.* && glide init && glide cc && glide install
     gtest: APP_ENV=test APP_CONF_PATH=$(pwd)/conf go test -v -cover  $(go list ./... | grep -v /vendor/)
     migration: goose -env=development -path=conf up

@@ -4,7 +4,7 @@ ENV APP_NAME {|PROJECTNAME|}
 
 RUN mkdir -p /go/src/github.com/gtforge/$APP_NAME
 WORKDIR /go/src/github.com/gtforge/$APP_NAME
-RUN echo -e "machine github.com\n  login 54de8434f752617a7b939636a48999a1ceb11f78" >> ~/.netrc
+RUN echo -e "machine github.com\n  login b08b064f7d82cfb3996562e74e125160e076f6be" >> ~/.netrc
 ADD glide.yaml /go/src/github.com/gtforge/$APP_NAME
 ADD glide.lock /go/src/github.com/gtforge/$APP_NAME
 RUN glide install

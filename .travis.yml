@@ -15,7 +15,7 @@ addons:
   postgresql: "9.5"
 before_install:
   - export PATH=$PATH:$HOME/gopath/bin
-  - echo -e "machine github.com\n  login 54de8434f752617a7b939636a48999a1ceb11f78" >> ~/.netrc
+  - echo -e "machine github.com\n  login b08b064f7d82cfb3996562e74e125160e076f6be" >> ~/.netrc
   - psql -c 'ALTER USER postgres WITH SUPERUSER'
   - psql -U postgres -c 'CREATE DATABASE {|PROJECTNAME|}_test;'
   - psql -U postgres -c "CREATE EXTENSION postgis;" {|PROJECTNAME|}_test
@@ -26,4 +26,4 @@ install:
   - glide install
 script:
   - go test -v -cover $(go list ./... | grep -v /vendor/)
-  - curl -s https://54de8434f752617a7b939636a48999a1ceb11f78@raw.githubusercontent.com/gtforge/gett_tools_scripts/master/code_analysis/golang/travis-check/static_analysis_tools.sh | bash
+  - curl -s https://b08b064f7d82cfb3996562e74e125160e076f6be@raw.githubusercontent.com/gtforge/gett_tools_scripts/master/code_analysis/golang/travis-check/static_analysis_tools.sh | bash
