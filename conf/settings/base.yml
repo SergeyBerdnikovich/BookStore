@@ -120,7 +120,7 @@ global:
         map_center_lng: -74.005500
         map_engine: 'google'
         distance_unit: 'imperial'
-        time_zone: 'Eastern Time (US & Canada)'
+        time_zone: 'US/Eastern'
         user_languages:
           - en
           - he
