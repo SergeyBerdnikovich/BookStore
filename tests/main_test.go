@@ -26,7 +26,7 @@ func TestMain(m *testing.M) {
 	}
 	err = filepath.Walk("routers", func(path string, info os.FileInfo, err error) error {
 		if strings.HasPrefix(info.Name(), "commentsRouter_________________________________") {
-			err = os.Remove("routers/" + info.Name())
+			return os.Remove("routers/" + info.Name())
 		}
 		return nil
 	})
