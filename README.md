@@ -80,5 +80,3 @@ https://gist.github.com/sergeylanzman/4e246edacc5c87aae85534500683cba8
 
 ## Settings
 * \< setting name > - \< meaning >
-* \< setting name > - \< meaning >
-* \< setting name > - \< meaning >
