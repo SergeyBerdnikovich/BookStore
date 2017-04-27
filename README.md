@@ -66,6 +66,12 @@ https://gist.github.com/sergeylanzman/4e246edacc5c87aae85534500683cba8
 ## [Business Criticality](https://confluence.gtforge.com/display/AR/Business+Criticality)
 \< TBD with an Architect >
 
+## Dependencies
+| Target | Type |
+| --- | --- |
+| \<service name> | either HTTP / Rabbit MQ / Service Hub / ? |
+| \<service name> | either HTTP / Rabbit MQ / Service Hub / ? |
+
 ## Owner
 \< R&D group name >: \< at least two developer names here >
 
@@ -74,6 +80,8 @@ https://gist.github.com/sergeylanzman/4e246edacc5c87aae85534500683cba8
 
 ## Key Endpoints
 \< desribe 2-3 key endpoint of the service, its purpose and how data looks like. this should give tangible insight about how the service contract >
+
+If there are key scheduled tasks - explain them instead of some of the endpoints.
 
 ## Installation
 \< what needed to be done to install it >
