@@ -67,7 +67,7 @@ https://gist.github.com/sergeylanzman/4e246edacc5c87aae85534500683cba8
 \< TBD with an Architect >
 
 ## Dependencies
-| Target | Type |
+| Target | Channel |
 | --- | --- |
 | \<service name> | either HTTP / Rabbit MQ / Service Hub / ? |
 | \<service name> | either HTTP / Rabbit MQ / Service Hub / ? |
