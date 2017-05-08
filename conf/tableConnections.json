@@ -1,0 +1,11 @@
+//this json should include mappings between columns/service containing the same data
+//for example: user_id in users table in GT and external_id in users table in pms
+{
+  "tables mappings": [{
+    "local_table": "table name",
+    "local_column": "column name",
+    "foreign_table": "table name",
+    "foreign_column": "column name",
+    "foreign_repository": "repository name"
+  }]
+}

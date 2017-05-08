@@ -1,0 +1,18 @@
+//for baseline porpuses, and in order to make it slimmer we need to skip
+//unusefull data for automation
+//available data values: all, last X months, last X days, skip
+{
+  "tables data handling": [{
+    "name": "table name",
+    "data": "all"
+  },
+    {
+      "name": "table name",
+      "data": "last X months"
+    },
+    {
+      "name": "table name",
+      "data": "skip"
+    }
+  ]
+}
