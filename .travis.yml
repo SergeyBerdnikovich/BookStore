@@ -18,8 +18,10 @@ before_install:
   - go get bitbucket.org/liamstask/goose/cmd/goose
   - goose -path=conf -env=test up
 install:
+  - go get -v github.com/onsi/ginkgo/ginkgo
+  - go get -v github.com/onsi/gomega
   - go get github.com/Masterminds/glide
   - glide install
 script:
-  - APP_ENV=test APP_CONF_PATH=$(pwd)/conf go test -v -cover $(go list ./... | grep -v /vendor/)
+  - APP_ENV=test APP_CONF_PATH=$(pwd)/conf ginkgo -r --randomizeAllSpecs --randomizeSuites --failOnPending --cover --trace --race --progress
   - curl -s https://$BUNDLE_GITHUB__COM@raw.githubusercontent.com/gtforge/gett_tools_scripts/master/code_analysis/golang/travis-check/static_analysis_tools.sh | bash
