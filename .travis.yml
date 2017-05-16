@@ -4,6 +4,7 @@ branches:
   - /^scrum\d+$/
 go:
   - 1.8.1
+  - tip
 services:
   - redis-server
   - postgresql
@@ -23,5 +24,7 @@ install:
   - go get github.com/Masterminds/glide
   - glide install
 script:
-  - APP_ENV=test APP_CONF_PATH=$(pwd)/conf ginkgo -r --randomizeAllSpecs --randomizeSuites --failOnPending --cover --trace --race --progress
+  - curl -s https://$BUNDLE_GITHUB__COM@raw.githubusercontent.com/gtforge/gett_tools_scripts/master/code_analysis/golang/travis-check/go.test.sh | bash
   - curl -s https://$BUNDLE_GITHUB__COM@raw.githubusercontent.com/gtforge/gett_tools_scripts/master/code_analysis/golang/travis-check/static_analysis_tools.sh | bash
+after_success:
+    - bash <(curl -s https://codecov.io/bash) -t $CODE_COV_KEY
