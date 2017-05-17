@@ -27,7 +27,7 @@ cd github.com/gtforge/$PROJECTNAME
 git clone git@github.com:gtforge/gett-skeleton-go.git .
 brew update
 brew install glide
-go get bitbucket.org/liamstask/goose/cmd/goose
+go get github.com/gtforge/swan
 go get github.com/beego/bee
 go get github.com/onsi/ginkgo/ginkgo
 echo "Adding Flesh"
@@ -36,8 +36,6 @@ echo '# '$PROJECTNAME > README.md
 echo "Gitifying..."
 rm init_new_service.sh
 rm -rf .git
-glide init --non-interactive
-glide cc
 glide install
 git init
 git add .
