@@ -16,8 +16,8 @@ before_install:
   - psql -c 'ALTER USER postgres WITH SUPERUSER'
   - psql -U postgres -c 'CREATE DATABASE {|PROJECTNAME|}_test;'
   - psql -U postgres -c "CREATE EXTENSION postgis;" {|PROJECTNAME|}_test
-  - go get bitbucket.org/liamstask/goose/cmd/goose
-  - goose -path=conf -env=test up
+  - go get github.com/gtforge/swan
+  - swan -path=conf -env=test up
 install:
   - go get -v github.com/onsi/ginkgo/ginkgo
   - go get -v github.com/onsi/gomega
