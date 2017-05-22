@@ -33,6 +33,7 @@ go get github.com/onsi/ginkgo/ginkgo
 echo "Adding Flesh"
 LC_CTYPE=C sed -i '' 's/{|PROJECTNAME|}/'$PROJECTNAME'/g' $(find -L . -type f| grep -v .git | grep -v assets)
 echo '# '$PROJECTNAME > README.md
+chmod +x install.sh
 echo "Gitifying..."
 rm init_new_service.sh
 rm -rf .git

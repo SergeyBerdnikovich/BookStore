@@ -84,6 +84,9 @@ https://gist.github.com/sergeylanzman/4e246edacc5c87aae85534500683cba8
 If there are key scheduled tasks - explain them instead of some of the endpoints.
 
 ## Installation
+```bash
+./install.sh
+```
 \< what needed to be done to install it >
 
 ## Settings
