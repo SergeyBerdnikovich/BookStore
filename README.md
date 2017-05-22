@@ -5,7 +5,8 @@ _(Note: To update the skeleton script make a pull request to [init_new_service.s
 
 Easily set-up a new golang micro service
 
-Just run the following in **GOPATH/src**
+Just run the following in 
+####GOPATH/src
 ```bash
 curl -s -L https://git.io/vyk8g | bash -s YOUR_SERVICE_NAME
 ```
