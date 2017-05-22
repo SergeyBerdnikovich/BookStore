@@ -6,8 +6,8 @@ go get github.com/beego/bee
 go get github.com/onsi/ginkgo/ginkgo
 echo "Adding Flesh"
 LC_CTYPE=C sed -i '' 's/{|PROJECTNAME|}/'$PROJECTNAME'/g' $(find -L . -type f| grep -v .git | grep -v assets)
-echo '# '$PROJECTNAME > README.md
-chmod +x install.sh
+rm README.md
+mv README_TEMPLATE.md README.md
 echo "Gitifying..."
 rm init_new_service.sh
 rm -rf .git
@@ -18,6 +18,6 @@ git commit -m "Initial Commit"
 git branch dev
 echo 
 echo "================================ DONE ================================== "
-echo "The new project is located at \"${PWD}/github.com/gtforge/$PROJECTNAME\" "
+echo "The new project is located at \"${PWD}\" "
 echo "Run install.sh to create a database, run migrations and seed users"
 echo
