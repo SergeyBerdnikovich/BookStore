@@ -22,9 +22,9 @@ EOF
 echo "Building Project $PROJECTNAME"
 # create project dir
 echo "Cloning from skeleton..."
-mkdir -p github.com/gtforge/$PROJECTNAME
-cd github.com/gtforge/$PROJECTNAME
-git clone git@github.com:gtforge/gett-skeleton-go.git .
+mkdir -p $GOPATH/github.com/gtforge/$PROJECTNAME
+cd $GOPATH/github.com/gtforge/$PROJECTNAME
+git clone -b install git@github.com:gtforge/gett-skeleton-go.git .
 brew update
 brew install glide
 go get github.com/gtforge/swan
