@@ -16,4 +16,8 @@ git init
 git add .
 git commit -m "Initial Commit"
 git branch dev
-echo "Done! Run install.sh to create a database, run migrations and seed users"
+echo 
+echo "================================ DONE ================================== "
+echo "The new project is located at \"${PWD}/github.com/gtforge/$PROJECTNAME\" "
+echo "Run install.sh to create a database, run migrations and seed users"
+echo
