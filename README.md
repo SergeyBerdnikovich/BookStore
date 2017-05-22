@@ -51,5 +51,5 @@ Code style:
 Setting up a new service?
 If there is something basic that is missing from this starter template, please add it to the template so everyone could enjoy
 
-# Target readme file (Template) is located inside [README_TEMPLATE.md](README_TEMPLATE.md): ([Example Reference](https://github.com/gtforge/arm_service/blob/dev/README.md))
-----------
+### Target readme file (Template) is located inside [README_TEMPLATE.md](README_TEMPLATE.md)  
+After creating the skeleton it will become the project's README.md file
