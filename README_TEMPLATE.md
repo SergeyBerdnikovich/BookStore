@@ -1,3 +1,5 @@
+(You can find example reference for this template [here](https://github.com/gtforge/arm_service/blob/dev/README.md) )
+
 # {|PROJECTNAME|}
 
 ## Service's Responsibility
