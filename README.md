@@ -1,10 +1,11 @@
 # GettSkeleton golang
 ![alt text](https://cdn-images-2.medium.com/max/1200/1*AemYIFm92tl5RW9nBzNSAw.jpeg "")
 
+_(Note: To update the skeleton script make a pull request to [init_new_service.sh](https://github.com/gtforge/gett-skeleton-go/blob/install/init_new_service.sh) )_
+
 Easily set-up a new golang micro service
 
-Just run the following in 
-####GOPATH/src
+Just run the following. The service will be created under $GOPATH/src/github.com/gtforge/YOUR_SERVICE_NAME
 ```bash
 curl -s -L https://git.io/vyk8g | bash -s YOUR_SERVICE_NAME
 ```
@@ -48,9 +49,6 @@ Code style:
 
 Setting up a new service?
 If there is something basic that is missing from this starter template, please add it to the template so everyone could enjoy
-
-To edit the install script:
-https://gist.github.com/sergeylanzman/4e246edacc5c87aae85534500683cba8
 
 # Target readme file (Template): ([Example Reference](https://github.com/gtforge/arm_service/blob/dev/README.md))
 ----------
