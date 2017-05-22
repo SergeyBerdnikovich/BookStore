@@ -22,8 +22,8 @@ EOF
 echo "Building Project $PROJECTNAME"
 # create project dir
 echo "Cloning from skeleton..."
-mkdir -p $GOPATH/github.com/gtforge/$PROJECTNAME
-cd $GOPATH/github.com/gtforge/$PROJECTNAME
+mkdir -p $GOPATH/src/github.com/gtforge/$PROJECTNAME
+cd $GOPATH/src/github.com/gtforge/$PROJECTNAME
 git clone -b install git@github.com:gtforge/gett-skeleton-go.git .
 brew update
 brew install glide
