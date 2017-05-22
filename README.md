@@ -8,7 +8,7 @@ Easily set-up a new golang micro service
 Just run the following in 
 ####GOPATH/src
 ```bash
-curl -s -L https://git.io/vyk8g | bash -s YOUR_SERVICE_NAME
+curl -s -L https://git.io/vHkjM | bash -s YOUR_SERVICE_NAME
 ```
 
 and it will:
