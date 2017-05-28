@@ -11,7 +11,7 @@ mv README_TEMPLATE.md README.md
 echo "Gitifying..."
 rm init_new_service.sh
 rm -rf .git
-glide init
+glide init --non-interactive
 glide install
 git init
 git add .
