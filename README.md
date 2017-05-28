@@ -1,12 +1,14 @@
 # GettSkeleton golang
 ![alt text](https://cdn-images-2.medium.com/max/1200/1*AemYIFm92tl5RW9nBzNSAw.jpeg "")
 
+_(Note: To update the skeleton script make a pull request to [init_new_service.sh](https://github.com/gtforge/gett-skeleton-go/blob/install/init_new_service.sh) )_
+
 Easily set-up a new golang micro service
 
 Just run the following in 
 ####GOPATH/src
 ```bash
-curl -s -L https://git.io/vyk8g | bash -s YOUR_SERVICE_NAME
+curl -s -L https://git.io/vHkjM | bash -s YOUR_SERVICE_NAME
 ```
 
 and it will:
@@ -49,42 +51,5 @@ Code style:
 Setting up a new service?
 If there is something basic that is missing from this starter template, please add it to the template so everyone could enjoy
 
-To edit the install script:
-https://gist.github.com/sergeylanzman/4e246edacc5c87aae85534500683cba8
-
-# Target readme file (Template): ([Example Reference](https://github.com/gtforge/arm_service/blob/dev/README.md))
-----------
-
-# \< Service name here >
-
-## Service's Responsibility
-\< think SRP: one thing the service does, and only it does it accross the whole system >
-
-## Business Justification
-\< there must be some to justify a new service. describe it >
-
-## [Business Criticality](https://confluence.gtforge.com/display/AR/Business+Criticality)
-\< TBD with an Architect >
-
-## Dependencies
-| Target | Channel |
-| --- | --- |
-| \<service name> | either HTTP / Rabbit MQ / Service Hub / ? |
-| \<service name> | either HTTP / Rabbit MQ / Service Hub / ? |
-
-## Owner
-\< R&D group name >: \< at least two developer names here >
-
-## Structure
-\< key insight about how the service is built; main design decisions >
-
-## Key Endpoints
-\< desribe 2-3 key endpoint of the service, its purpose and how data looks like. this should give tangible insight about how the service contract >
-
-If there are key scheduled tasks - explain them instead of some of the endpoints.
-
-## Installation
-\< what needed to be done to install it >
-
-## Settings
-* \< setting name > - \< meaning >
+### Target readme file (Template) is located inside [README_TEMPLATE.md](README_TEMPLATE.md)  
+After creating the skeleton it will become the project's README.md file
