@@ -10,8 +10,9 @@ Just run the following in
 ```bash
 source <(curl -s -L https://git.io/vHkjM) YOUR_SERVICE_NAME
 ```
+After the script finishes, you can run `./install.sh` to create a database, run migrations and seed users
 
-and it will:
+What the script does:
    1. Clone the latest version of this repository, using beego.
    2. Name your service appropriately
    3. Seed basic data
