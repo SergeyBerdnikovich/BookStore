@@ -18,8 +18,6 @@ before_install:
   - go get github.com/gtforge/swan
   - swan -path=conf -env=test up
 install:
-  - go get -v github.com/onsi/ginkgo/ginkgo
-  - go get -v github.com/onsi/gomega
   - go get github.com/Masterminds/glide
   - glide install
 script:
