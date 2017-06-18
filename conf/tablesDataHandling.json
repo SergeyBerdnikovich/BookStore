@@ -1,13 +1,13 @@
-//for baseline porpuses, and in order to make it slimmer we need to skip
-//unusefull data for automation
-//available data values: all, last X months, last X days, skip
+// baseline creation process create the schema for each service but when it populates 
+// it with data , sometimes there are huge tables that we can skip their data.
+// In order to make valid lightweight baseline we need to skip
+// unusefull data for automation
+// for example: logs/audits tables can be skipped
+// for big (> 10000 records) tables that need to be skipped or to be cloned partially
+// use the following: (note that table names are case sensitive
 {
   "tables data handling": [{
-    "name": "table name",
-    "data": "all"
-  },
-    {
-      "name": "table name",
+      "name": "table_name",
       "data": "last X months"
     },
     {
