@@ -1,0 +1,10 @@
+// this json should include mapping for any table having one of following 5 entities as a column:
+// company_id, phone_user_id, driver_id, class_id, order_id
+// 
+{
+  "tables mappings": [{
+    "local_table": "table_name",
+    "local_column": "column_name",
+    "entity_name": "company_id"
+  }]
+}
