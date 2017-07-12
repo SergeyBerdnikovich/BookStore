@@ -1,27 +1,48 @@
-language: go
+dist: trusty
+sudo: false
+
 branches:
   except:
   - /^scrum\d+$/
-go:
-  - 1.8.1
-services:
-  - redis-server
-  - postgresql
+
 addons:
-  postgresql: "9.5"
+  postgresql: 9.5
+  apt:
+    packages:
+    - postgresql-9.5-postgis-2.3
+
+services:
+- redis-server
+- postgresql
+- rabbitmq
+
+language: go
+go: [ 1.8.3 ]
+env:
+  global:
+  - PATH=$PATH:$HOME/gopath/bin
+
 before_install:
-  - export PATH=$PATH:$HOME/gopath/bin
-  - echo -e "machine github.com\n  login $BUNDLE_GITHUB__COM" >> ~/.netrc
-  - psql -c 'ALTER USER postgres WITH SUPERUSER'
-  - psql -U postgres -c 'CREATE DATABASE {|PROJECTNAME|}_test;'
-  - psql -U postgres -c "CREATE EXTENSION postgis;" {|PROJECTNAME|}_test
-  - go get github.com/gtforge/swan
-  - swan -path=conf -env=test up
+- echo "machine github.com login $BUNDLE_GITHUB__COM" > $HOME/.netrc
+- echo "machine raw.githubusercontent.com login $BUNDLE_GITHUB__COM" >> $HOME/.netrc
+- chmod 600 $HOME/.netrc
+
 install:
-  - go get github.com/Masterminds/glide
-  - glide install
+- go get github.com/onsi/ginkgo/ginkgo
+- go get github.com/onsi/gomega
+- go get github.com/gtforge/swan
+- go get github.com/Masterminds/glide
+- glide install
+
+before_script:
+- psql -c 'ALTER USER postgres WITH SUPERUSER'
+- psql -U postgres -c 'CREATE DATABASE {|PROJECTNAME|}_test;'
+- psql -U postgres -c "CREATE EXTENSION postgis;" {|PROJECTNAME|}_test
+- swan -path=conf -env=test up
+
 script:
-  - curl -s https://$BUNDLE_GITHUB__COM@raw.githubusercontent.com/gtforge/gett_tools_scripts/master/code_analysis/golang/travis-check/go.test.sh | bash
-  - curl -s https://$BUNDLE_GITHUB__COM@raw.githubusercontent.com/gtforge/gett_tools_scripts/master/code_analysis/golang/travis-check/static_analysis_tools.sh | bash
+- curl -n -s https://raw.githubusercontent.com/gtforge/gett_tools_scripts/master/code_analysis/golang/travis-check/go.test.sh | bash
+- curl -n -s https://raw.githubusercontent.com/gtforge/gett_tools_scripts/master/code_analysis/golang/travis-check/static_analysis_tools.sh | bash
+
 after_success:
-    - bash <(curl -s https://codecov.io/bash) -t $CODE_COV_KEY
+- bash <(curl -s https://codecov.io/bash) -t ${CODECOV_TOKEN:-"$CODE_COV_KEY"} || echo 'Codecov failed to upload.'
