@@ -57,7 +57,7 @@
                         {{range $i, $env := .envs}}
                         {{if not (compare $env $.current_env) }}
                         <li>
-                                <a href="{{map_get $.gett_services_url $.app_name}}/?env={{$env.Code|ToUpper}}">
+                                <a href="?env={{$env.Code|ToUpper}}">
                                     <img height="20" width="15"
                                          src="/assets/images/country-4x3/{{$env.Code|ToLower}}.svg"/>
                                     {{$env.Code|ToUpper}}</a>
