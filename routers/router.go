@@ -1,14 +1,14 @@
 // Package routers for service
 // @APIVersion 1.0.0
-// @Title Gett permission_enforcement_service
-// @Description Gett permission_enforcement_service
+// @Title Gett {|PROJECTNAME|}
+// @Description Gett {|PROJECTNAME|}
 // @Name Gett
 // @Schemes http
 package routers
 
 import (
 	"github.com/astaxie/beego"
-	"github.com/gtforge/permission_enforcement_service/controllers"
+	"github.com/gtforge/{|PROJECTNAME|}/controllers"
 	// import gett-beego package with share settings and endpoints
 	_ "github.com/gtforge/services_common_go/gett-ops/gett-beego"
 )

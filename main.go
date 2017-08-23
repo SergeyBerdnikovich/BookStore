@@ -1,7 +1,7 @@
 package main
 
 import (
-	_ "github.com/gtforge/permission_enforcement_service/routers"
+	_ "github.com/gtforge/{|PROJECTNAME|}/routers"
 	"github.com/astaxie/beego"
 )
 

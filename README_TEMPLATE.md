@@ -1,6 +1,6 @@
 (You can find example reference for this template [here](https://github.com/gtforge/arm_service/blob/dev/README.md) )
 
-# permission_enforcement_service
+# {|PROJECTNAME|}
 
 ## Service's Responsibility
 \< think SRP: one thing the service does, and only it does it accross the whole system >

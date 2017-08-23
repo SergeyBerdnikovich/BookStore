@@ -1,6 +1,6 @@
 .idea
 /vendor
-permission_enforcement_service
+{|PROJECTNAME|}
 .tags*
 lastupdate.tmp
 swagger/css
