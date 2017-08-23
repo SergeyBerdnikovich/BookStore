@@ -1,0 +1,146 @@
+hash: df34087864d2d995204b0aff5fd8495ef4771b79fbbd32e0897f1f694d7e6a6d
+updated: 2017-08-23T14:43:33.461365308+02:00
+imports:
+- name: github.com/astaxie/beego
+  version: d96289a81bf67728cff7a19b067aaecc65a62ec6
+  subpackages:
+  - context
+  - config
+  - context/param
+  - grace
+  - logs
+  - session
+  - toolbox
+  - utils
+  - plugins/auth
+  - plugins/cors
+- name: github.com/dgrijalva/jwt-go
+  version: a539ee1a749a2b895533f979515ac7e6e0f5b650
+- name: github.com/dustin/go-humanize
+  version: 259d2a102b871d17f30e3cd9881a642961a1e486
+- name: github.com/elazarl/go-bindata-assetfs
+  version: 30f82fa23fd844bd5bb1e5f216db87fd77b5eb43
+- name: github.com/fsnotify/fsnotify
+  version: 4da3e2cfbabc9f751898f250b49f2439785783a1
+- name: github.com/gtforge/beego-assets
+  version: 4629b9861bf2889f4f6f547526215674e42d271b
+- name: github.com/gtforge/services_common_go
+  version: 75dd42e907a05b01173502d08fbda54a91b4d838
+  subpackages:
+  - gett-auth
+  - gett-env
+  - gett-ops/gett-beego
+  - gett-auth/authorization
+  - gett-auth/lib
+  - gett-auth/models
+  - gett-auth/postgres-session
+  - gett-config
+  - gett-ui
+  - gett-utils/gett-migrations
+  - gett-ops
+  - gett-ops/gett-beego/controllers
+  - gett-ops/gett-beego/logger-adapter
+  - gett-utils/transactionid
+  - gett-utils/col
+  - gett-auth/repositories
+  - gett-utils
+  - gett-storages
+  - gett-models/jsonb
+  - gett-ui/render-form
+  - gett-utils/string-utils/string-format
+  - gett-alive
+  - gett-ops/alive
+- name: github.com/hashicorp/hcl
+  version: 392dba7d905ed5d04a5794ba89f558b27e2ba1ca
+  subpackages:
+  - hcl/ast
+  - hcl/parser
+  - hcl/token
+  - json/parser
+  - hcl/scanner
+  - hcl/strconv
+  - json/scanner
+  - json/token
+- name: github.com/jinzhu/gorm
+  version: c3bb6aaa828867eec72dd8571d111e442688f85f
+- name: github.com/jinzhu/inflection
+  version: 1c35d901db3da928c72a72d8458480cc9ade058f
+- name: github.com/lib/pq
+  version: e42267488fe361b9dc034be7a6bffef5b195bceb
+  subpackages:
+  - oid
+- name: github.com/magiconair/properties
+  version: be5ece7dd465ab0765a9682137865547526d1dfb
+- name: github.com/mitchellh/mapstructure
+  version: d0303fe809921458f417bcf828397a65db30a7e4
+- name: github.com/newrelic/go-agent
+  version: 29ec3cd1bb2f21d21d36da37dae52695cb2c3a17
+  subpackages:
+  - internal
+  - internal/logger
+  - internal/utilization
+  - internal/jsonx
+  - internal/sysinfo
+- name: github.com/pelletier/go-toml
+  version: 4692b8f9babfc93db58cc592ba2689d8736781de
+- name: github.com/sergeylanzman/newrelic_beego
+  version: 64b375d096a6479ad8a0e41402c3f68cfb31d2d3
+- name: github.com/Sirupsen/logrus
+  version: 89742aefa4b206dcf400792f3bd35b542998eb3b
+- name: github.com/spf13/afero
+  version: 9be650865eab0c12963d8753212f4f9c66cdcf12
+  subpackages:
+  - mem
+- name: github.com/spf13/cast
+  version: acbeb36b902d72a7a4c18e8f3241075e7ab763e4
+- name: github.com/spf13/jwalterweatherman
+  version: 0efa5202c04663c757d84f90f5219c1250baf94f
+- name: github.com/spf13/pflag
+  version: e57e3eeb33f795204c1ca35f56c44f83227c6e66
+- name: github.com/spf13/viper
+  version: 25b30aa063fc18e48662b86996252eabdcf2f0c7
+- name: github.com/tdewolff/buffer
+  version: df6253e2a2cda5aba1b5d0c59fc5bdf0a98ae192
+- name: github.com/tdewolff/minify
+  version: 1d4349f23265a8c1f3bbff734ae5fcaa57b6e023
+  subpackages:
+  - css
+  - js
+- name: github.com/tdewolff/parse
+  version: e4ac711ab0bf625c08270ba17557c30b2c1c5c2d
+  subpackages:
+  - css
+  - js
+- name: github.com/tdewolff/strconv
+  version: 3e8091f4417ebaaa3910da63a45ea394ebbfb0e3
+- name: github.com/tylerb/gls
+  version: e606233f194d6c314156dc6a35f21a42a470c6f6
+- name: golang.org/x/crypto
+  version: eb71ad9bd329b5ac0fd0148dd99bd62e8be8e035
+  subpackages:
+  - ssh/terminal
+  - bcrypt
+  - blowfish
+- name: golang.org/x/sys
+  version: 07c182904dbd53199946ba614a412c61d3c548f5
+  subpackages:
+  - unix
+  - windows
+- name: golang.org/x/text
+  version: e56139fd9c5bc7244c76116c68e500765bb6db6b
+  subpackages:
+  - transform
+  - unicode/norm
+- name: gopkg.in/airbrake/gobrake.v2
+  version: 668876711219e8b0206e2994bf0a59d889c775aa
+- name: gopkg.in/redis.v5
+  version: a16aeec10ff407b1e7be6dd35797ccf5426ef0f0
+  subpackages:
+  - internal
+  - internal/consistenthash
+  - internal/hashtag
+  - internal/pool
+  - internal/proto
+- name: gopkg.in/yaml.v2
+  version: eb3733d160e74a9c7e442f435eb3bea458e1d19f
+devImports: []

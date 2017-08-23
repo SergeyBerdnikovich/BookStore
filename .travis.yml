@@ -36,8 +36,8 @@ install:
 
 before_script:
 - psql -c 'ALTER USER postgres WITH SUPERUSER'
-- psql -U postgres -c 'CREATE DATABASE {|PROJECTNAME|}_test;'
-- psql -U postgres -c "CREATE EXTENSION postgis;" {|PROJECTNAME|}_test
+- psql -U postgres -c 'CREATE DATABASE permission_enforcement_service_test;'
+- psql -U postgres -c "CREATE EXTENSION postgis;" permission_enforcement_service_test
 - swan -path=conf -env=test up
 
 script:

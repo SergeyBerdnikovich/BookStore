@@ -3,7 +3,7 @@ package tests
 import (
 	"net/http/httptest"
 
-	_ "github.com/gtforge/{|PROJECTNAME|}/routers"
+	_ "github.com/gtforge/permission_enforcement_service/routers"
 
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"

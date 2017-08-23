@@ -1,21 +1,21 @@
 development:
   host: localhost
   driver: postgres
-  open: dbname={|PROJECTNAME|}  sslmode=disable
+  open: dbname=permission_enforcement_service  sslmode=disable
   user_name:
   password:
   log: true
-  database: {|PROJECTNAME|}
+  database: permission_enforcement_service
   open_pool: 20
   idle_pool: 10
 test:
   host: localhost
   driver: postgres
-  open: dbname={|PROJECTNAME|}_test  sslmode=disable
+  open: dbname=permission_enforcement_service_test  sslmode=disable
   user_name:
   password:
   log: true
-  database: {|PROJECTNAME|}_test
+  database: permission_enforcement_service_test
   open_pool: 20
   idle_pool: 10
 stage:
