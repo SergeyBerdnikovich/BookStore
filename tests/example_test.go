@@ -5,6 +5,7 @@ import (
 
 	_ "github.com/gtforge/{|PROJECTNAME|}/routers"
 
+	"github.com/gtforge/services_common_go/gett-tests"
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
 )
@@ -17,7 +18,7 @@ var _ = Describe("/alive", func() {
 	var response *httptest.ResponseRecorder
 
 	BeforeEach(func() {
-		response = MakeTestRequest("GET", "/alive", nil)
+		response = gettTests.MakeRequest("GET", "/alive")
 	})
 
 	It("should respond with 200 OK", func() {
