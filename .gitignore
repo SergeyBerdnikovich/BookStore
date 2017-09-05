@@ -17,3 +17,4 @@ log/*
 public/assets
 .sass-cache
 tmp
+*.coverprofile
