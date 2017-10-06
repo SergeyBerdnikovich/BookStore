@@ -9,7 +9,10 @@ import (
 
 // init Beeego framework for testing
 func initBeego() {
-	_, file, _, _ := runtime.Caller(1)
-	apppath, _ := filepath.Abs(filepath.Dir(filepath.Join(file, ".."+string(filepath.Separator))))
+	pc := make([]uintptr, 15)
+	n := runtime.Callers(2, pc)
+	frames := runtime.CallersFrames(pc[:n])
+	frame, _ := frames.Next()
+	apppath, _ := filepath.Abs(filepath.Dir(filepath.Join(frame.File, ".."+string(filepath.Separator))))
 	beego.TestBeegoInit(apppath)
 }
