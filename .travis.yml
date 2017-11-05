@@ -6,10 +6,10 @@ branches:
   - /^scrum\d+$/
 
 addons:
-  postgresql: 9.5
+  postgresql: 9.6
   apt:
     packages:
-    - postgresql-9.5-postgis-2.3
+    - postgresql-9.6-postgis-2.3
 
 services:
 - redis-server
@@ -17,7 +17,7 @@ services:
 - rabbitmq
 
 language: go
-go: [ 1.9.1 ]
+go: [ 1.9.2 ]
 env:
   global:
   - PATH=$PATH:$HOME/gopath/bin
