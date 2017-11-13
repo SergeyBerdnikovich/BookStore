@@ -1,6 +1,7 @@
 (You can find example reference for this template [here](https://github.com/gtforge/arm_service/blob/dev/README.md) )
 
 # {|PROJECTNAME|}
+[![codecov](https://codecov.io/gh/gtforge/{|PROJECTNAME|}_service/branch/dev/graph/badge.svg?token=sqcVsy7Ae1)](https://codecov.io/gh/gtforge/{|PROJECTNAME|}_service) [![Build Status](https://travis-ci.com/gtforge/{|PROJECTNAME|}_service.svg?token=bLsoURkLsc3wxx9XEsrq&branch=dev)](https://travis-ci.com/gtforge/{|PROJECTNAME|}_service)
 
 ## Service's Responsibility
 \< think SRP: one thing the service does, and only it does it accross the whole system >
