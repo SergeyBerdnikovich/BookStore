@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-glide install
+dep ensure -v
 createdb {|PROJECTNAME|}
 swan -path=conf up
 bee rs users-preload
