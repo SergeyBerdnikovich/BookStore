@@ -6,10 +6,10 @@ branches:
   - /^scrum\d+$/
 
 addons:
-  postgresql: 9.5
+  postgresql: 9.6
   apt:
     packages:
-    - postgresql-9.5-postgis-2.3
+    - postgresql-9.6-postgis-2.3
 
 services:
 - redis-server
@@ -17,7 +17,7 @@ services:
 - rabbitmq
 
 language: go
-go: [ 1.9.1 ]
+go: [ 1.9.2 ]
 env:
   global:
   - PATH=$PATH:$HOME/gopath/bin
@@ -27,18 +27,18 @@ before_install:
 - echo "machine raw.githubusercontent.com login $BUNDLE_GITHUB__COM" >> $HOME/.netrc
 - chmod 600 $HOME/.netrc
 
-install:
-- go get github.com/onsi/ginkgo/ginkgo
-- go get github.com/onsi/gomega
-- go get github.com/gtforge/swan
-- go get github.com/Masterminds/glide
-- glide install
-
 before_script:
 - psql -c 'ALTER USER postgres WITH SUPERUSER'
 - psql -U postgres -c 'CREATE DATABASE {|PROJECTNAME|}_test;'
 - psql -U postgres -c "CREATE EXTENSION postgis;" {|PROJECTNAME|}_test
+
+install:
+- go get github.com/onsi/ginkgo/ginkgo
+- go get github.com/onsi/gomega
+- go get github.com/gtforge/swan
+- go get -u github.com/golang/dep/cmd/dep
 - swan -path=conf -env=test up
+- dep ensure -v
 
 script:
 - curl -n -s https://raw.githubusercontent.com/gtforge/gett_tools_scripts/master/code_analysis/golang/travis-check/go.test.sh | bash
