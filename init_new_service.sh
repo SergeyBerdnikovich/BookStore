@@ -9,14 +9,11 @@ rm README.md
 mv README_TEMPLATE.md README.md
 echo "Gitifying..."
 rm init_new_service.sh
-rm -rf .git
+git remote set-url origin git@github.com:gtforge/${PROJECTNAME}
+git commit . -m "Cloned from skeleton project"
 dep init
 dep ensure
-git init
-git add .
-git commit -m "Initial Commit"
-git branch dev
-echo 
+echo
 echo "================================ DONE ================================== "
 echo "The new project is located at \"${PWD}\" "
 echo "Run install.sh to create a database, run migrations and seed users"
