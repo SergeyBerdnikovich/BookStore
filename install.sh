@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-dep ensure -v
+dep ensure -v --update
 createdb {|PROJECTNAME|}
 swan -path=conf up
 bee rs users-preload
