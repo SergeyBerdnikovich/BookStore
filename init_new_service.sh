@@ -4,7 +4,7 @@ go get -u github.com/gtforge/swan
 go get -u github.com/beego/bee
 go get -u github.com/onsi/ginkgo/ginkgo
 echo "Adding Flesh"
-LC_CTYPE=C sed -i '' 's/{|PROJECTNAME|}/'$PROJECTNAME'/g' $(find -L . -type f| grep -v .git | grep -v assets)
+LC_CTYPE=C sed -i '' 's/{|PROJECTNAME|}/'$PROJECTNAME'/g' $(find -L . -type f| grep -v .git | grep -v assets && echo .gitignore)
 rm README.md
 mv README_TEMPLATE.md README.md
 echo "Gitifying..."
