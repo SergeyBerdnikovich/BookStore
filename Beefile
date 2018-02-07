@@ -1,7 +1,7 @@
 enable_reload: true
 enable_notification: true
 scripts:
-    users-preload: go run vendor/github.com/gtforge/services_common_go/gett-auth/seed/main.go
+    users-preload: $GOPATH/bin/seed
     lints: curl -s https://$BUNDLE_GITHUB__COM@raw.githubusercontent.com/gtforge/gett_tools_scripts/master/code_analysis/golang/travis-check/static_analysis_tools.sh | bash
     glide-reset: rm glide.* && glide init && glide cc && glide install
     gtest: APP_ENV=test APP_CONF_PATH=$(pwd)/conf go test -v -cover  $(go list ./... | grep -v /vendor/)

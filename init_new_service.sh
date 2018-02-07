@@ -3,6 +3,7 @@ go get -u github.com/golang/dep/cmd/dep
 go get -u github.com/gtforge/swan
 go get -u github.com/beego/bee
 go get -u github.com/onsi/ginkgo/ginkgo
+go get -u github.com/gtforge/services_common_go/gett-auth/seed
 echo "Adding Flesh"
 LC_CTYPE=C sed -i '' 's/{|PROJECTNAME|}/'$PROJECTNAME'/g' $(find -L . -type f| grep -v .git | grep -v assets && echo .gitignore)
 rm README.md
