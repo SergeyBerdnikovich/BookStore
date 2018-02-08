@@ -3,10 +3,10 @@ package controllers
 import (
 	"strings"
 
-	"github.com/Sirupsen/logrus"
 	"github.com/gtforge/services_common_go/gett-auth"
 	"github.com/gtforge/services_common_go/gett-env"
 
+	"github.com/Sirupsen/logrus"
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/context"
 )
