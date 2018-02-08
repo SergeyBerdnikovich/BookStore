@@ -3,5 +3,5 @@ enable_notification: true
 scripts:
     users-preload: $GOPATH/bin/seed
     lints: curl -s https://$BUNDLE_GITHUB__COM@raw.githubusercontent.com/gtforge/gett_tools_scripts/master/code_analysis/golang/travis-check/static_analysis_tools.sh | bash
-    gtest: APP_ENV=test APP_CONF_PATH=$(pwd)/conf go test -v -cover  $(go list ./... | grep -v /vendor/)
+    gtest: APP_ENV=test APP_CONF_PATH=$(pwd)/conf go test -v -cover ./...
     migration: swan -env=development -path=conf up
