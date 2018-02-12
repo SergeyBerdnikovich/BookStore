@@ -6,15 +6,14 @@ import (
 	_ "github.com/gtforge/{|PROJECTNAME|}/routers"
 
 	"github.com/gtforge/services_common_go/gett-tests"
+
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
 )
 
 // A sample endpoint test
 // Use `Ω` (⌥+Z) instead of `Expect` if you like Greek alphabet.
-
 var _ = Describe("/alive", func() {
-
 	var response *httptest.ResponseRecorder
 
 	BeforeEach(func() {

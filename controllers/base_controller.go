@@ -3,12 +3,12 @@ package controllers
 import (
 	"strings"
 
-	"github.com/astaxie/beego/context"
+	"github.com/gtforge/services_common_go/gett-auth"
+	"github.com/gtforge/services_common_go/gett-env"
 
 	"github.com/Sirupsen/logrus"
 	"github.com/astaxie/beego"
-	"github.com/gtforge/services_common_go/gett-auth"
-	"github.com/gtforge/services_common_go/gett-env"
+	"github.com/astaxie/beego/context"
 )
 
 // Base - Base controller for all UI controller
@@ -37,6 +37,7 @@ func (c *Base) Init(ct *context.Context, controllerName, actionName string, app 
 		c.Data["current_env"] = gettEnv.Envs["IL"]
 	}
 }
+
 // Index - Main page
 func (c *Base) Index() {
 	err := c.Render()
