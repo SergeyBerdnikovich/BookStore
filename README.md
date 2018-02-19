@@ -56,3 +56,8 @@ If there is something basic that is missing from this starter template, please a
 
 ### Target readme file (Template) is located inside [README_TEMPLATE.md](README_TEMPLATE.md)  
 After creating the skeleton it will become the project's README.md file
+
+Baseline requirements: 
+   fill the 2 jsons in db folder according your service:
+   tablesDataHandling.json ==> write inside which tables' data is irrelevant for local environments
+   tableConnections.json ==> write which one from the main entities you are referencing in your table
