@@ -8,7 +8,7 @@ Easily set-up a new golang micro service
 Just run the following in 
 ####GOPATH/src
 ```bash
-source <(curl -s -L https://git.io/vHkjM) YOUR_SERVICE_NAME
+source <(curl -s -L https://git.io/vx70A) YOUR_SERVICE_NAME
 ```
 
 After the script finishes, you can run `./install.sh` to create a database, run migrations and seed users
