@@ -1,13 +1,14 @@
-status:
+coverage:
+  status:
     # Learn more at http://docs.codecov.io/docs/codecov-yaml
-     project: true
-     patch: true
-     changes: false
+    project: true
+    patch: true
+    changes: false
 
- comment:
-   layout: "header, diff"
-   behavior: default  # update if exists else create new
+comment:
+  layout: "header, diff"
+  behavior: default  # update if exists else create new
 
-   ignore:
-       - "/main.go"
-       - "**/*_mock.go"
+ignore:
+  - "/main.go"
+  - "**/*_mock.go"
