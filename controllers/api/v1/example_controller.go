@@ -4,7 +4,7 @@ import (
 	"net/http"
 
 	bContext "github.com/astaxie/beego/context"
-	"github.com/gtforge/gett-skeleton-go/controllers/api"
+	"github.com/gtforge/{|PROJECTNAME|}/controllers/api"
 )
 
 // ExampleController shows an example of controller creation
