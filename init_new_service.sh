@@ -12,8 +12,7 @@ echo "Gitifying..."
 rm init_new_service.sh
 git remote set-url origin git@github.com:gtforge/${PROJECTNAME}
 git commit . -m "Cloned from skeleton project"
-dep init
-dep ensure -v -update
+dep ensure -vendor-only
 echo
 echo "================================ DONE ================================== "
 echo "The new project is located at \"${PWD}\" "

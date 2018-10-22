@@ -1,0 +1,8 @@
+[[constraint]]
+  name = "github.com/gtforge/services_common_go"
+  version = "1.12.0"
+
+# Fix panic for the gopkg.in/fsnotify.v1 import
+[[override]]
+  name = "gopkg.in/fsnotify.v1"
+  source = "github.com/fsnotify/fsnotify"
