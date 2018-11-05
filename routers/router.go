@@ -1,14 +1,14 @@
 // Package routers for service
 // @APIVersion 1.0.0
-// @Title Gett {|PROJECTNAME|}
-// @Description Gett {|PROJECTNAME|}
+// @Title Gett BookStore
+// @Description Gett BookStore
 // @Name Gett
 // @Schemes http
 package routers
 
 import (
-	"github.com/gtforge/{|PROJECTNAME|}/controllers"
-	// "github.com/gtforge/{|PROJECTNAME|}/controllers/api/v1"
+	"github.com/gtforge/BookStore/controllers"
+	// "github.com/gtforge/BookStore/controllers/api/v1"
 	
 	// import gett-beego package with share settings and endpoints
 	_ "github.com/gtforge/services_common_go/gett-ops/gett-beego"

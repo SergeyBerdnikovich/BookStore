@@ -4,7 +4,7 @@ import (
 	"net/http"
 
 	bContext "github.com/astaxie/beego/context"
-	"github.com/gtforge/{|PROJECTNAME|}/controllers/api"
+	"github.com/gtforge/BookStore/controllers/api"
 )
 
 // ExampleController shows an example of controller creation

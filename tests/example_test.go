@@ -3,7 +3,7 @@ package tests
 import (
 	"net/http/httptest"
 
-	_ "github.com/gtforge/{|PROJECTNAME|}/routers"
+	_ "github.com/gtforge/BookStore/routers"
 
 	"github.com/gtforge/services_common_go/gett-tests"
 

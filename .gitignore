@@ -28,7 +28,7 @@ _testmain.go
 .idea/
 
 # ignore binaries and vendoring
-{|PROJECTNAME|}
+BookStore
 debug
 /vendor
 

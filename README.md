@@ -1,72 +1,48 @@
-# GettSkeleton for Go projects
+(You can find example reference for this template [here](https://github.com/gtforge/arm_service/blob/dev/README.md))
 
-![alt text](https://cdn-images-2.medium.com/max/1200/1*AemYIFm92tl5RW9nBzNSAw.jpeg "")
+# BookStore [![Build Status](https://travis-ci.com/gtforge/BookStore.svg?token=TRAVIS_TOKEN&branch=dev)](https://travis-ci.com/gtforge/BookStore) [![codecov](https://codecov.io/gh/gtforge/BookStore_service/branch/dev/graph/badge.svg?token=CODECOV_TOKEN)](https://codecov.io/gh/gtforge/BookStore)
 
-_(Note: To update the skeleton script make a pull request to [init_new_service.sh](https://github.com/gtforge/gett-skeleton-go/blob/master/init_new_service.sh) )_
+## Service's Responsibility
 
-Easily set up a new Golang microservice.
+\< think SRP: one thing the service does, and only it does it accross the whole system >
 
-Just run the following in `$GOPATH/src` folder:
+## Business Justification
 
-```bash
-source <(curl -s -L https://git.io/vx70A) YOUR_SERVICE_NAME
-```
+\< there must be some to justify a new service. describe it >
 
-After the script finishes, you can run `./install.sh` to create a database, run migrations and seed users.
+## [Business Criticality](https://confluence.gtforge.com/display/AR/Business+Criticality)
 
-What the script does:
+\< TBD with an Architect >
 
-1. Clones the latest version of this repository, using `beego`.
-2. Names your service appropriately
-3. Seeds basic data
-4. Setups Redis configuration
-5. Setups DB configuration (Postgres)
-6. Makes Dockerfile
-7. Makes PIZZA!
-  
-Project plan:
+## Dependencies
 
-1. conf => configuration files
-2. controllers => all controllers with base controller embedded.
-3. lib => business logic.
-4. models => objects with methods
-5. routes => routes + filter + other webserver and beego settings
-6. tests => api tests for service.
+| Target | Channel |
+| --- | --- |
+| \<service name> | either HTTP / Rabbit MQ / Service Hub / ? |
+| \<service name> | either HTTP / Rabbit MQ / Service Hub / ? |
 
-To run in `dev` env, use the [Bee](https://github.com/beego/bee) tool:
+## Owner
 
-```bash
-go get github.com/beego/bee
-bee run -gendoc=true
-```
+\< R&D group name >: \< at least two developer names here >
 
-Use [dep](https://github.com/golang/dep) tool for dependency management:
+## Structure
+
+\< key insight about how the service is built; main design decisions >
+
+## Key Endpoints
+
+\< desribe 2-3 key endpoint of the service, its purpose and how data looks like. this should give tangible insight about how the service contract >
+
+If there are key scheduled tasks - explain them instead of some of the endpoints.
+
+## Installation
 
 ```bash
-go get -u github.com/golang/dep/cmd/dep
+./install.sh
 ```
 
-Code style:
+\< what needed to be done to install it. If possible, don't write anything here and instead make sure install.sh is updated >
 
-1. `golint` + `go vet` + `gofmt`/`goimports` => your best friends
-2. `gometalinter` => your other best friend
-3. <https://github.com/gtforge/services_common_go> => your family
-4. Don't use beego ORM - use `gettStorages.DB` instead (through [Gorm](https://github.com/jinzhu/gorm))
-5. Write comments in controllers for proper `swagger` generation
-6. If you don't need Postgres or Redis => remove `dbconf.yml` or `redis.yml`
-7. Don't be Harry Potter: less magic makes things simple.
+## Settings
 
-Setting up a new service?
-
-If there is something basic that is missing from this starter template, please add it to the template so everyone could enjoy
-
-**Target README file template is located inside [README_TEMPLATE.md](README_TEMPLATE.md)**
-
-After creating the skeleton it will become the project's README.md file
-
-Baseline requirements:
-
-Fill the 2 JSONs in `db` folder accordingly in your service:
-
-- `tablesDataHandling.json` ==> write inside which tables' data is irrelevant for local environments
-- `tableConnections.json` ==> write which one from the main entities you are referencing in your table
+* \< setting name > - \< meaning >

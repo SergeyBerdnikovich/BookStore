@@ -1,21 +1,21 @@
 development:
   host: localhost
   driver: postgres
-  open: dbname={|PROJECTNAME|}  sslmode=disable
+  open: dbname=BookStore  sslmode=disable
   user_name:
   password:
   log: true
-  database: {|PROJECTNAME|}
+  database: BookStore
   open_pool: 20
   idle_pool: 10
 test:
   host: localhost
   driver: postgres
-  open: dbname={|PROJECTNAME|}_test  sslmode=disable
+  open: dbname=BookStore_test  sslmode=disable
   user_name:
   password:
   log: true
-  database: {|PROJECTNAME|}_test
+  database: BookStore_test
   open_pool: 20
   idle_pool: 10
 stage:
