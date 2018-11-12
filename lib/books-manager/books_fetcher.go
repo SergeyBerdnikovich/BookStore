@@ -3,6 +3,7 @@ package booksManager
 import (
 	"github.com/gtforge/BookStore/models"
 	"github.com/gtforge/BookStore/store"
+	"github.com/k0kubun/pp"
 )
 
 type BooksFetcher interface {
@@ -16,6 +17,10 @@ func NewBooksFetcher() BooksFetcher {
 type booksFetcher struct{}
 
 func (bm *booksFetcher) GetAll() (books []models.Book, err error) {
+
+
+	pp.Println("store.BooksStore is ======>", store.BooksStore)
+
 	books, err = store.BooksStore.GetAllBooks()
 
 	return books, err

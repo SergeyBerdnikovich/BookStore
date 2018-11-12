@@ -1,12 +1,15 @@
-package pg_store
+package pg_store // <=== this is not imported by anyone, so init() will not be called
 
 import (
 	. "github.com/gtforge/BookStore/models"
 	"github.com/gtforge/BookStore/store"
 	"github.com/gtforge/services_common_go/gett-storages"
+	"github.com/k0kubun/pp"
 )
 
 func init() {
+	pp.Println("THIS WILL NOT BE PRINTED CAS PKG IS NOT IMPORTED BY SOMEBODY!")
+
 	if store.BooksStore != nil {
 		panic("store.BooksStore already initialized")
 	}

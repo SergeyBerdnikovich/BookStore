@@ -175,7 +175,10 @@
   branch = "master"
   digest = "1:a9588e39ff216acfb078151e6647616a45d81026465b28c2d7b76c026aea0e04"
   name = "github.com/jinzhu/gorm"
-  packages = ["."]
+  packages = [
+    ".",
+    "dialects/postgres",
+  ]
   pruneopts = ""
   revision = "742154be9a26e849f02d296073c077e0a7c23828"
 
@@ -201,6 +204,7 @@
   name = "github.com/lib/pq"
   packages = [
     ".",
+    "hstore",
     "oid",
   ]
   pruneopts = ""
@@ -584,7 +588,10 @@
     "github.com/gtforge/services_common_go/gett-env",
     "github.com/gtforge/services_common_go/gett-ops/gett-beego",
     "github.com/gtforge/services_common_go/gett-ops/gett-beego/controllers",
+    "github.com/gtforge/services_common_go/gett-storages",
     "github.com/gtforge/services_common_go/gett-tests",
+    "github.com/jinzhu/gorm",
+    "github.com/jinzhu/gorm/dialects/postgres",
     "github.com/onsi/ginkgo",
     "github.com/onsi/gomega",
   ]
