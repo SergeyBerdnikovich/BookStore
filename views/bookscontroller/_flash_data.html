@@ -1,0 +1,12 @@
+<span class="flash">
+    {{ if .flash.success }}
+        <div class="alert alert-success">
+            {{ .flash.success | str2html}}
+        </div>
+    {{ end }}
+    {{ if .flash.error }}
+        <div class="alert alert-danger">
+            {{ .flash.error | str2html}}
+        </div>
+    {{ end }}
+</span>

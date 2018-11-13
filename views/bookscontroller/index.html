@@ -1,0 +1,39 @@
+{{template "bookscontroller/_flash_data.html" .}}
+
+<h2>Books</h2>
+
+<table class="table">
+    <tr>
+        <td class="long-cell-header"><b>Name</b></td>
+        <td class="long-cell-header"><b>Quantity</b></td>
+        <td class="long-cell-header"><b>Actions</b></td>
+    </tr>
+    {{ range .books }}
+        <tr>
+            <td>
+                <div class="word-wrap-cell">{{.Name}}</div>
+            </td>
+            <td>
+                <div class="word-wrap-cell">{{.Quantity}}</div>
+            </td>
+            <td>
+                <a href="/books/{{.ID}}">
+                    <button type="button" class="btn btn-primary">Show</button>
+                </a>
+                <a href="/books/{{.ID}}/edit">
+                    <button type="button" class="btn btn-info">Edit</button>
+                </a>
+                <div class="form-group row">
+                    <form action="/books/{{.ID}}" method="POST"
+                          onsubmit="return confirm('Are you sure you want to delete the book?');">
+                        <input type="hidden" name="_method" value="DELETE"/>
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </div>
+            </td>
+        </tr>
+    {{ end }}
+</table>
+<a href="/books/new">
+    <button type="button" class="btn btn-primary">Add Book</button>
+</a>

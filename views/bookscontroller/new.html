@@ -1,0 +1,7 @@
+<h2>Add Book</h2>
+
+{{template "bookscontroller/_flash_data.html" .}}
+
+<form action="/books" method="POST">
+    {{template "bookscontroller/_form.html" .}}
+</form>

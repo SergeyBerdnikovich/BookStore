@@ -45,3 +45,15 @@ func (c *Base) Index() {
 		logrus.Error(err)
 	}
 }
+
+func (c *Base) flashError(err string) {
+	flash := beego.NewFlash()
+	flash.Error(err)
+	flash.Store(&c.Controller)
+}
+
+func (c *Base) flashSuccess(msg string) {
+	flash := beego.NewFlash()
+	flash.Success(msg)
+	flash.Store(&c.Controller)
+}

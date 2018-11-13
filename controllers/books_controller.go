@@ -1,8 +1,13 @@
 package controllers
 
 import (
-	"fmt"
 	"net/http"
+
+	"github.com/astaxie/beego"
+
+	"github.com/Sirupsen/logrus"
+
+	"github.com/gtforge/BookStore/models"
 
 	"github.com/gtforge/BookStore/lib/books-manager"
 )
@@ -11,43 +16,60 @@ type BooksController struct {
 	Base
 }
 
-//func (c *BooksController) Init(ct *context.Context, controllerName, actionName string, app interface{}) {
-//	c.Controller.Init(ct, controllerName, actionName, app)
-//}
-
 // @router /books [get]
 func (c *BooksController) Index() {
-	books, err := booksManager.NewBooksFetcher().GetAll()
+	books, _ := booksManager.BooksFetcherInstance.GetAll()
 
+	c.Data["books"] = books
+
+	err := c.Render()
 	if err != nil {
-		errMsg := fmt.Sprintf("error while inserting PrioritiesGroups\nerror: %v", err.Error())
-		c.Data["json"] = "{\"error\":\"" + errMsg + "\"}"
-		c.ServeJSON()
-		c.Ctx.Output.SetStatus(http.StatusOK)
-	} else {
-		c.Data["json"] = books
-		c.ServeJSON()
-		c.Ctx.Output.SetStatus(http.StatusOK)
+		logrus.Error(err.Error())
 	}
 }
 
 // @router /books/:id [get]
 func (c *BooksController) Show() {
-	//book_id := c.GetString(":id")
+	bookId, _ := c.GetUint8(":id")
+	book, _ := booksManager.BooksFetcherInstance.GetById(uint(bookId))
 
-	c.Ctx.Output.SetStatus(http.StatusOK)
+	c.Data["book"] = book
+
+	err := c.Render()
+	if err != nil {
+		logrus.Error(err.Error())
+	}
 }
 
 // @router /books/new [get]
 func (c *BooksController) New() {
-	c.Ctx.Output.SetStatus(http.StatusOK)
+	beego.ReadFromRequest(&c.Controller)
+
+	c.Data["book"] = &models.Book{}
+
+	err := c.Render()
+	if err != nil {
+		logrus.Error(err.Error())
+	}
 }
 
 // @router /books [post]
 func (c *BooksController) Create() {
-	//book_id := c.GetString(":id")
+	book := models.Book{}
+	err := c.ParseForm(&book)
 
-	c.Ctx.Output.SetStatus(http.StatusOK)
+	if err != nil {
+		logrus.Error(err.Error())
+	}
+
+	if err := booksManager.BooksCreatorInstance.Create(book.Name, book.Quantity); err != nil {
+		c.flashError(err.Error())
+		c.Redirect("/books/new", http.StatusFound)
+		return
+	}
+
+	c.flashSuccess("Book was created successfully")
+	c.Redirect("/books", http.StatusFound)
 }
 
 // @router /books/:id/edit [get]
@@ -66,7 +88,13 @@ func (c *BooksController) Update() {
 
 // @router /books/:id [delete]
 func (c *BooksController) Destroy() {
-	//book_id := c.GetString(":id")
+	bookId, _ := c.GetUint8(":id")
 
-	c.Ctx.Output.SetStatus(http.StatusOK)
+	if err := booksManager.BooksDestroyerInstance.Delete(uint(bookId)); err != nil {
+		c.flashError(err.Error())
+	} else {
+		c.flashSuccess("Book was deleted")
+	}
+
+	c.Redirect("/books", http.StatusFound)
 }

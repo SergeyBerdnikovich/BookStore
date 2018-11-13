@@ -1,22 +1,28 @@
 package booksManager
 
 import (
-	"github.com/gtforge/BookStore/models"
-	"github.com/gtforge/BookStore/store"
+	. "github.com/gtforge/BookStore/models"
+	"github.com/gtforge/BookStore/store/books-store"
 )
 
-type BooksFetcher interface {
-	GetAll() ([]models.Book, error)
+type BooksFetcherInterface interface {
+	GetAll() ([]Book, error)
+	GetPerPage(pageNumber int) ([]Book, error)
+	GetById(Id uint) (Book, error)
 }
 
-func NewBooksFetcher() BooksFetcher {
-	return &booksFetcher{}
-}
+var BooksFetcherInstance BooksFetcherInterface = &booksFetcher{}
 
 type booksFetcher struct{}
 
-func (bm *booksFetcher) GetAll() (books []models.Book, err error) {
-	books, err = store.BooksStore.GetAllBooks()
+func (bm *booksFetcher) GetAll() (books []Book, err error) {
+	return books_store.Instance.GetAll()
+}
 
-	return books, err
+func (bm *booksFetcher) GetPerPage(pageNumber int) ([]Book, error) {
+	return books_store.Instance.GetPerPage(pageNumber)
+}
+
+func (bm *booksFetcher) GetById(Id uint) (Book, error) {
+	return books_store.Instance.GetById(Id)
 }
