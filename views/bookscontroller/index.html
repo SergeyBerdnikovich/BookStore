@@ -26,7 +26,6 @@
                 <div class="form-group row">
                     <form action="/books/{{.ID}}" method="POST"
                           onsubmit="return confirm('Are you sure you want to delete the book?');">
-                        <input type="hidden" name="_method" value="DELETE"/>
                         <button type="submit" class="btn btn-danger">Delete</button>
                     </form>
                 </div>

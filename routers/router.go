@@ -37,5 +37,5 @@ func init() {
 	beego.Router("/books", &controllers.BooksController{}, "post:Create")
 	beego.Router("/books/:id/edit", &controllers.BooksController{}, "get:Edit")
 	beego.Router("/books/:id", &controllers.BooksController{}, "put:Update")
-	beego.Router("/books/:id", &controllers.BooksController{}, "delete:Destroy")
+	beego.Router("/books/:id", &controllers.BooksController{}, "post:Destroy")
 }
