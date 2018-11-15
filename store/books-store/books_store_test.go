@@ -37,29 +37,36 @@ var _ = Describe("Testing BooksStore", func() {
 			err_stub   error
 		)
 
-		BeforeEach(func() {
-			mockDB.EXPECT().GetAll().Return(books_stub, err_stub).Times(1)
-		})
+
 
 		Context("when we fetch all books from DB without error", func() {
-			books_stub = []models.Book{
-				{ID: 1, Name: "Test 1", Quantity: 1},
-				{ID: 2, Name: "Test 2", Quantity: 2},
-			}
-			err_stub = nil
+			BeforeEach(func() {
+				// You should do mock with right return value, without it here it will do mock with empty value
+				books_stub = []models.Book{
+					{ID: 1, Name: "Test 1", Quantity: 1},
+					{ID: 2, Name: "Test 2", Quantity: 2},
+				}
+
+				mockDB.EXPECT().GetAll().Return(books_stub, err_stub).Times(1)
+			})
 
 			It("should return slice of books without error", func() {
 				books, err := subject.GetAll()
 
 				Expect(err).To(Succeed())
-				Expect(err).To(Equal(err_stub))
+				// Expect(err).To(Equal(err_stub)) // <-- Refusing to compare <nil> to <nil>. We don't need this, prev check ensure it
 				Expect(books).To(Equal(books_stub))
 			})
 		})
 
 		Context("when there is some error during books fetching", func() {
-			books_stub = []models.Book{}
-			err_stub = errors.New("Some error")
+			BeforeEach(func() {
+				// define values BEFORE mock:
+				books_stub = []models.Book{}
+				err_stub = errors.New("Some error")
+
+				mockDB.EXPECT().GetAll().Return(books_stub, err_stub).Times(1)
+			})
 
 			It("should return empty slice of books with error", func() {
 				books, err := subject.GetAll()
