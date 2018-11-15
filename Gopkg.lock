@@ -10,6 +10,14 @@
   version = "v1.1.1"
 
 [[projects]]
+  digest = "1:979c13e2215cc1780c6a0e7ff7cfba0b7349653790790b6e52737625d3b203ec"
+  name = "github.com/artiomgiza/monkey-flexible-extensions"
+  packages = ["."]
+  pruneopts = ""
+  revision = "c039fc89406f7a1b764e652759ffc02722e91eb1"
+  version = "1.0.3"
+
+[[projects]]
   digest = "1:5f1da289305a747fcb37381c79c80f0ccf8a01b082501b506828025acde2c1a9"
   name = "github.com/astaxie/beego"
   packages = [
@@ -35,6 +43,14 @@
   packages = ["quantile"]
   pruneopts = ""
   revision = "3a771d992973f24aa725d07868b467d1ddfceafb"
+
+[[projects]]
+  digest = "1:a6ee710e45210bafe11f2f28963571be2ac8809f9a7b675a6d2c02302a1ce1a9"
+  name = "github.com/bouk/monkey"
+  packages = ["."]
+  pruneopts = ""
+  revision = "5df1f207ff77e025801505ae4d903133a0b4353f"
+  version = "v1.0.0"
 
 [[projects]]
   digest = "1:6098222470fe0172157ce9bbef5d2200df4edde17ee649c5d6e48330e4afa4c6"
@@ -594,9 +610,11 @@
   analyzer-version = 1
   input-imports = [
     "github.com/Sirupsen/logrus",
+    "github.com/artiomgiza/monkey-flexible-extensions",
     "github.com/astaxie/beego",
     "github.com/astaxie/beego/context",
     "github.com/astaxie/beego/context/param",
+    "github.com/bouk/monkey",
     "github.com/golang/mock/gomock",
     "github.com/gtforge/services_common_go/gett-auth",
     "github.com/gtforge/services_common_go/gett-env",
