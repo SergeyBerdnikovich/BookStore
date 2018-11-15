@@ -2,6 +2,6 @@
 
 {{template "bookscontroller/_flash_data.html" .}}
 
-<form action="/books" method="POST">
+<form action='{{urlfor "BooksController.Create"}}' method="POST">
     {{template "bookscontroller/_form.html" .}}
 </form>

@@ -1,7 +1,10 @@
 package pg_store
 
 import (
+	"errors"
+
 	. "github.com/gtforge/BookStore/models"
+	"github.com/gtforge/services_common_go/gett-settings"
 	"github.com/gtforge/services_common_go/gett-storages"
 	"github.com/jinzhu/gorm"
 )
@@ -13,6 +16,7 @@ type PgBooksStoreInterface interface {
 	Create(Name string, Quantity int) error
 	Update(Id uint, Name string, Quantity int) error
 	Delete(Id uint) error
+	DecreaseQuantity(Id uint) error
 }
 
 var Instance PgBooksStoreInterface = &pgBooksStore{
@@ -35,8 +39,8 @@ func (b *pgBooksStore) GetAll() ([]Book, error) {
 
 func (b *pgBooksStore) GetPerPage(pageNumber int) ([]Book, error) {
 	var books []Book
-	itemsPerPage := 10
-	offset := (pageNumber-1)*itemsPerPage + 1
+	itemsPerPage := gettSettings.EnvSetting("DEV", "Books", "maximum_rows_per_page").AsInt()
+	offset := (pageNumber - 1) * itemsPerPage
 
 	err := gettStorages.DB.Order("id ASC").Offset(offset).Limit(itemsPerPage).Find(&books).Error
 
@@ -68,4 +72,30 @@ func (b *pgBooksStore) Delete(id uint) error {
 	book := Book{ID: id}
 
 	return gettStorages.DB.Table(booksTableName).Delete(&book).Error
+}
+
+func (b *pgBooksStore) DecreaseQuantity(id uint) error {
+	for {
+		var book Book
+
+		err := gettStorages.DB.Table(booksTableName).First(&book, "id = ?", id).Error
+		if err != nil {
+			return err
+		}
+
+		newQuantity := book.Quantity - 1
+
+		if newQuantity < 0 {
+			return errors.New("Negative quantity")
+		}
+
+		result := gettStorages.DB.Table(booksTableName).Where("id = ? AND quantity = ?", id, book.Quantity).Updates(map[string]interface{}{"quantity": newQuantity})
+		err = result.Error
+		if err != nil {
+			return err
+		}
+		if result.RowsAffected > 0 {
+			return nil
+		}
+	}
 }

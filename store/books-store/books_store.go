@@ -12,6 +12,7 @@ type BooksStoreInterface interface {
 	Create(Name string, Quantity int) error
 	Update(Id uint, Name string, Quantity int) error
 	Delete(Id uint) error
+	DecreaseQuantity(Id uint) error
 }
 
 var Instance BooksStoreInterface = &booksStore{
@@ -44,4 +45,8 @@ func (bs *booksStore) Update(Id uint, Name string, Quantity int) error {
 
 func (bs *booksStore) Delete(Id uint) error {
 	return bs.db.Delete(Id)
+}
+
+func (bs *booksStore) DecreaseQuantity(Id uint) error {
+	return bs.db.DecreaseQuantity(Id)
 }

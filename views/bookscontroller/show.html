@@ -9,6 +9,9 @@
     </div>
 </div>
 
-<a href="/books">
+<a href='{{urlfor "BooksController.Edit" "id" .book.ID}}'>
+    <button type="button" class="btn btn-info">Edit</button>
+</a>
+<a href='{{urlfor "BooksController.Index"}}'>
     <button type="button" class="btn btn-primary">Back</button>
 </a>

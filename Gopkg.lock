@@ -69,6 +69,14 @@
   version = "v1.4.7"
 
 [[projects]]
+  digest = "1:73a7106c799f98af4f3da7552906efc6a2570329f4cd2d2f5fb8f9d6c053ff2f"
+  name = "github.com/golang/mock"
+  packages = ["gomock"]
+  pruneopts = ""
+  revision = "c34cdb4725f4c3844d095133c6e40e448b86589b"
+  version = "v1.1.1"
+
+[[projects]]
   digest = "1:3dd078fda7500c341bc26cfbc6c6a34614f295a2457149fc1045cab767cbcf18"
   name = "github.com/golang/protobuf"
   packages = ["proto"]
@@ -123,10 +131,13 @@
     "gett-ops/gett-beego/modules",
     "gett-ops/gett-beego/prometheus",
     "gett-ops/gett-beego/swagger",
+    "gett-settings",
+    "gett-settings/controllers",
     "gett-storages",
     "gett-storages/gett-sql-drivers",
     "gett-tests",
     "gett-ui",
+    "gett-ui/gett-audit",
     "gett-ui/render-form",
     "gett-utils",
     "gett-utils/col",
@@ -175,7 +186,10 @@
   branch = "master"
   digest = "1:a9588e39ff216acfb078151e6647616a45d81026465b28c2d7b76c026aea0e04"
   name = "github.com/jinzhu/gorm"
-  packages = ["."]
+  packages = [
+    ".",
+    "dialects/postgres",
+  ]
   pruneopts = ""
   revision = "742154be9a26e849f02d296073c077e0a7c23828"
 
@@ -201,6 +215,7 @@
   name = "github.com/lib/pq"
   packages = [
     ".",
+    "hstore",
     "oid",
   ]
   pruneopts = ""
@@ -450,6 +465,7 @@
   digest = "1:6543c75ddc1efc0041202dd49378ee2e5711b7cc82c2845c0437eef6276cc984"
   name = "golang.org/x/net"
   packages = [
+    "context",
     "html",
     "html/atom",
     "html/charset",
@@ -580,11 +596,18 @@
     "github.com/Sirupsen/logrus",
     "github.com/astaxie/beego",
     "github.com/astaxie/beego/context",
+    "github.com/astaxie/beego/context/param",
+    "github.com/golang/mock/gomock",
     "github.com/gtforge/services_common_go/gett-auth",
     "github.com/gtforge/services_common_go/gett-env",
     "github.com/gtforge/services_common_go/gett-ops/gett-beego",
     "github.com/gtforge/services_common_go/gett-ops/gett-beego/controllers",
+    "github.com/gtforge/services_common_go/gett-settings",
+    "github.com/gtforge/services_common_go/gett-settings/controllers",
+    "github.com/gtforge/services_common_go/gett-storages",
     "github.com/gtforge/services_common_go/gett-tests",
+    "github.com/jinzhu/gorm",
+    "github.com/jinzhu/gorm/dialects/postgres",
     "github.com/onsi/ginkgo",
     "github.com/onsi/gomega",
   ]

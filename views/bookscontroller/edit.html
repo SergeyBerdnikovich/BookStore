@@ -1,0 +1,7 @@
+<h2>Edit Book #{{.book.ID}}</h2>
+
+{{template "bookscontroller/_flash_data.html" .}}
+
+<form action='{{urlfor "BooksController.Update" "id" .book.ID}}' method="POST">
+    {{template "bookscontroller/_form.html" .}}
+</form>

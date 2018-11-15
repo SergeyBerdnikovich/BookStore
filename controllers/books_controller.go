@@ -16,32 +16,41 @@ type BooksController struct {
 	Base
 }
 
-// @router /books [get]
 func (c *BooksController) Index() {
-	books, _ := booksManager.BooksFetcherInstance.GetAll()
+	beego.ReadFromRequest(&c.Controller)
+
+	books, err := booksManager.BooksFetcherInstance.GetAll()
+	if err != nil {
+		logrus.Error(err.Error())
+	}
 
 	c.Data["books"] = books
 
-	err := c.Render()
+	err = c.Render()
 	if err != nil {
 		logrus.Error(err.Error())
 	}
 }
 
-// @router /books/:id [get]
 func (c *BooksController) Show() {
-	bookId, _ := c.GetUint8(":id")
-	book, _ := booksManager.BooksFetcherInstance.GetById(uint(bookId))
+	bookId, err := c.GetInt("id")
+	if err != nil {
+		logrus.Error(err.Error())
+	}
+
+	book, err := booksManager.BooksFetcherInstance.GetById(uint(bookId))
+	if err != nil {
+		logrus.Error(err.Error())
+	}
 
 	c.Data["book"] = book
 
-	err := c.Render()
+	err = c.Render()
 	if err != nil {
 		logrus.Error(err.Error())
 	}
 }
 
-// @router /books/new [get]
 func (c *BooksController) New() {
 	beego.ReadFromRequest(&c.Controller)
 
@@ -53,48 +62,80 @@ func (c *BooksController) New() {
 	}
 }
 
-// @router /books [post]
 func (c *BooksController) Create() {
 	book := models.Book{}
-	err := c.ParseForm(&book)
 
+	err := c.ParseForm(&book)
 	if err != nil {
 		logrus.Error(err.Error())
 	}
 
-	if err := booksManager.BooksCreatorInstance.Create(book.Name, book.Quantity); err != nil {
+	err = booksManager.BooksCreatorInstance.Create(book.Name, book.Quantity)
+	if err != nil {
 		c.flashError(err.Error())
-		c.Redirect("/books/new", http.StatusFound)
-		return
+		c.Redirect(beego.URLFor("BooksController.New"), http.StatusFound)
+	} else {
+		c.flashSuccess("Book was created successfully")
+		c.Redirect(beego.URLFor("BooksController.Index"), http.StatusFound)
+	}
+}
+
+func (c *BooksController) Edit() {
+	beego.ReadFromRequest(&c.Controller)
+
+	bookId, err := c.GetInt("id")
+	if err != nil {
+		logrus.Error(err.Error())
 	}
 
-	c.flashSuccess("Book was created successfully")
-	c.Redirect("/books", http.StatusFound)
+	book, err := booksManager.BooksFetcherInstance.GetById(uint(bookId))
+	if err != nil {
+		logrus.Error(err.Error())
+	}
+
+	c.Data["book"] = book
+
+	err = c.Render()
+	if err != nil {
+		logrus.Error(err.Error())
+	}
 }
 
-// @router /books/:id/edit [get]
-func (c *BooksController) Edit() {
-	//book_id := c.GetString(":id")
-
-	c.Ctx.Output.SetStatus(http.StatusOK)
-}
-
-// @router /books/:id [put]
 func (c *BooksController) Update() {
-	//book_id := c.GetString(":id")
+	bookId, err := c.GetInt("id")
+	if err != nil {
+		logrus.Error(err.Error())
+	}
 
-	c.Ctx.Output.SetStatus(http.StatusOK)
+	book := models.Book{ID: uint(bookId)}
+
+	err = c.ParseForm(&book)
+	if err != nil {
+		logrus.Error(err.Error())
+	}
+
+	err = booksManager.BooksUpdaterInstance.Update(book.ID, book.Name, book.Quantity)
+	if err != nil {
+		c.flashError(err.Error())
+		c.Redirect(beego.URLFor("BooksController.Edit", "id", bookId), http.StatusFound)
+	} else {
+		c.flashSuccess("Book was updated successfully")
+		c.Redirect(beego.URLFor("BooksController.Show", "id", bookId), http.StatusFound)
+	}
 }
 
-// @router /books/:id [delete]
 func (c *BooksController) Destroy() {
-	bookId, _ := c.GetUint8(":id")
+	bookId, err := c.GetInt("id")
+	if err != nil {
+		logrus.Error(err.Error())
+	}
 
-	if err := booksManager.BooksDestroyerInstance.Delete(uint(bookId)); err != nil {
+	err = booksManager.BooksDestroyerInstance.Delete(uint(bookId))
+	if err != nil {
 		c.flashError(err.Error())
 	} else {
 		c.flashSuccess("Book was deleted")
 	}
 
-	c.Redirect("/books", http.StatusFound)
+	c.Redirect(beego.URLFor("BooksController.Index"), http.StatusFound)
 }

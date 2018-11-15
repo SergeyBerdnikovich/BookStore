@@ -17,23 +17,22 @@
                 <div class="word-wrap-cell">{{.Quantity}}</div>
             </td>
             <td>
-                <a href="/books/{{.ID}}">
+                <a href='{{urlfor "BooksController.Show" "id" .ID}}'>
                     <button type="button" class="btn btn-primary">Show</button>
                 </a>
-                <a href="/books/{{.ID}}/edit">
+                <a href='{{urlfor "BooksController.Edit" "id" .ID}}'>
                     <button type="button" class="btn btn-info">Edit</button>
                 </a>
-                <div class="form-group row">
-                    <form action="/books/{{.ID}}" method="POST"
-                          onsubmit="return confirm('Are you sure you want to delete the book?');">
-                        <input type="hidden" name="_method" value="DELETE"/>
-                        <button type="submit" class="btn btn-danger">Delete</button>
-                    </form>
-                </div>
+                <form action='{{urlfor "BooksController.Destroy" "id" .ID}}'
+                      method="POST"
+                      onsubmit="return confirm('Are you sure you want to delete the book?');"
+                      style="display: inline;">
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
             </td>
         </tr>
     {{ end }}
 </table>
-<a href="/books/new">
+<a href='{{urlfor "BooksController.New"}}'>
     <button type="button" class="btn btn-primary">Add Book</button>
 </a>
